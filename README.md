@@ -33,7 +33,7 @@ You can search for new packages using the CLI tools or on https://search.nixos.o
 
 ## Install Custom Packages on a Project?
 
-We use [nix-shell](https://nixos.org/manual/nix/stable/command-ref/nix-shell.html) and [nix-direnv](https://github.com/nix-community/nix-direnv) to install custom packages or to pin versions. 
+I use [nix-shell](https://nixos.org/manual/nix/stable/command-ref/nix-shell.html) and [nix-direnv](https://github.com/nix-community/nix-direnv) to install custom packages or to pin versions. 
 
 1. Enable `direnv` on your `~/.zshrc` configuration
 
