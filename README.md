@@ -131,7 +131,7 @@ in
   }
 ```
 
-Once the [nix-shell][nix-shell] is enabled you run **hivemind** to start the services.
+Once the [nix-shell][nix-shell] is enabled you run `hivemind` to start the services.
 
 [darwin]: https://en.wikipedia.org/wiki/Darwin_(operating_system)
 [nix]: https://nixos.org
