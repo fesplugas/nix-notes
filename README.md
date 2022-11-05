@@ -1,5 +1,20 @@
 # nix-notes
 
+Since I started using Darwin machines in 2003 I've used Fink, MacPorts and Homebrew.
+
+As a developer I was using:
+
+- [Homebrew](https://brew.sh)
+- [ASDF](https://github.com/asdf-vm/asdf) + Multiple Plugins
+
+I wanted to something different to manage my development environment but with some constraints.
+
+The new tool should be fast and reproducible.
+
+Nix was under my radar for some time but as it had and still have an "incredibly steep learning curve" I was postponing the adoption.
+
+## Install Nix and Some Global Packages
+
 1. [Install Nix](https://nixos.org/manual/nix/stable/installation/installing-binary.html#installing-a-binary-distribution)
 
 2. Add a new channel an update
