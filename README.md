@@ -86,5 +86,5 @@ I'm not using [nix-darwin](https://github.com/LnL7/nix-darwin) it requires some 
 To run services like PostgreSQL, RabbitMQ, Redis I'm using a combination of
 
 - `shell.nix` to define the packages and pin versions
-- `nix-direnv` to enable the packages
-- `hivemind` to start the processes
+- [nix-direnv](https://github.com/nix-community/nix-direnv) to enable the packages
+- [hivemind](https://github.com/DarthSim/hivemind#usage) to start the processes
