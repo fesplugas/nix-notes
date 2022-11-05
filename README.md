@@ -17,16 +17,16 @@
 
 ## Home Manager
 
-[Install Home Manager](https://nix-community.github.io/home-manager/index.html#sec-install-standalone)
+1. [Install Home Manager](https://nix-community.github.io/home-manager/index.html#sec-install-standalone)
 
-Edit home manager configuration
+2. Edit home manager configuration
 
-```
-home-manager edit
-```
+    ```
+    home-manager edit
+    ```
 
-And then switch the configuration
+3. And then switch the configuration
 
-```
-home-manager switch
-```
+    ```
+    home-manager switch
+    ```
