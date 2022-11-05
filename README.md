@@ -8,7 +8,7 @@ Last years my go to developer tools have been
 - [ASDF](https://github.com/asdf-vm/asdf) + [Multiple Plugins](https://github.com/asdf-vm/asdf-plugins#plugin-list)
 - [Docker](https://docs.docker.com/) and [Docker Compose](https://docs.docker.com/compose/)
 
-I wanted to something different to manage my development environment but with some constraints. The new tool should be fast and reproducible. **Nix** had been under my radar for some time but as it had, and still has, an "incredibly steep learning curve" I was postponing the adoption.
+I wanted to something different to manage my development environment but with some constraints. The new tool should be fast and reproducible. **[Nix][nix]** had been under my radar for some time but as it had, and still has, an "incredibly steep learning curve" I was postponing the adoption.
 
 Here are my notes about how I use it.
 
@@ -131,5 +131,6 @@ This `shell.nix` installs **Hivemind**, **PostgreSQL** and **Redis**. Once the [
       }
     ```
 
+[nix]: https://nixos.org
 [nix-shell]: https://nixos.org/manual/nix/stable/command-ref/nix-shell.html
 [nix-direnv]: https://github.com/nix-community/nix-direnv
