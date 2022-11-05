@@ -1,6 +1,6 @@
 # Nix Notes
 
-Since I started using Darwin machines in 2003 I've used Fink, MacPorts and Homebrew.
+Since I started using Darwin machines in 2003 I've used **Fink**, **MacPorts** and **Homebrew**.
 
 Last years my go to developer tools have been
 
