@@ -2,12 +2,13 @@
 
 Since I started using Darwin machines in 2003 I've used Fink, MacPorts and Homebrew.
 
-As a developer I was using:
+Last years my go to developer tools have been
 
 - [Homebrew](https://brew.sh)
 - [ASDF](https://github.com/asdf-vm/asdf) + Multiple Plugins
+- Docker and Docker Compose
 
-I wanted to something different to manage my development environment but with some constraints. The new tool should be fast and reproducible. Nix had been under my radar for some time but as it had and still has an "incredibly steep learning curve" I was postponing the adoption.
+I wanted to something different to manage my development environment but with some constraints. The new tool should be fast and reproducible. Nix had been under my radar for some time but as it had, and still has, an "incredibly steep learning curve" I was postponing the adoption.
 
 Here are my notes about how I use it.
 
@@ -27,10 +28,6 @@ Here are my notes about how I use it.
     ```
     nix-env --install --remove-all --file env.nix
     ```
-
-## Nix-Darwing and system services ...
-
-WIP
 
 ## Install Custom Packages on a Project?
 
@@ -79,3 +76,9 @@ We use [nix-shell](https://nixos.org/manual/nix/stable/command-ref/nix-shell.htm
     ```
     which jq
     ```
+
+## Nix-Darwin and Services
+
+I'm not using [nix-darwin](https://github.com/LnL7/nix-darwin).
+
+To run services like PostgreSQL, RabbitMQ, Redis I'm using a combination of `shell.nix`, `nix-direnv` and `hivemind`.
