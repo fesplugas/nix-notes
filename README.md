@@ -1,4 +1,4 @@
-# nix-notes
+# Nix Notes
 
 Since I started using Darwin machines in 2003 I've used Fink, MacPorts and Homebrew.
 
@@ -28,6 +28,8 @@ Here are my notes about how I use it.
     ```
     nix-env --install --remove-all --file env.nix
     ```
+
+You can search for new packages using the CLI tools or on https://search.nixos.org/packages
 
 ## Install Custom Packages on a Project?
 
