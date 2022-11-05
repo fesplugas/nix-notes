@@ -91,7 +91,7 @@ To run services like **PostgreSQL**, **RabbitMQ**, **Redis** I'm using a combina
 
 1. `shell.nix`
 
-    ```
+    ```nix
     let
       nixpkgs = import <nixpkgs-22.05-darwin> {};
       postgresql = "postgresql_14";
