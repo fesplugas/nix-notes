@@ -18,14 +18,14 @@ Here are my notes about how I use it.
 
 2. Add a new channel an update
 
-    ```
+    ```bash
     nix-channel --add https://nixos.org/channels/nixpkgs-22.05-darwin
     nix-channel --update
     ````
 
 3. Install packages
 
-    ```
+    ```bash
     nix-env --install --remove-all --file env.nix
     ```
 
@@ -37,7 +37,7 @@ I use [nix-shell](https://nixos.org/manual/nix/stable/command-ref/nix-shell.html
 
 1. Enable `direnv` on your `~/.zshrc` configuration
 
-    ```
+    ```bash
     if type direnv &>/dev/null; then
       export DIRENV_LOG_FORMAT=""
       eval "$(direnv hook zsh)"
@@ -46,7 +46,7 @@ I use [nix-shell](https://nixos.org/manual/nix/stable/command-ref/nix-shell.html
     
 2. On your project add a `shell.nix` with your package list
 
-    ```
+    ```nix
     let
       version = "nixpkgs-22.05-darwin";
       nixpkgs = import (fetchTarball "https://github.com/nixos/nixpkgs/archive/${version}.tar.gz") {};
@@ -69,13 +69,13 @@ I use [nix-shell](https://nixos.org/manual/nix/stable/command-ref/nix-shell.html
 
 4. Allow the new `.envrc` file
 
-    ```
+    ```bash
     direnv allow
     ```
     
 5. Verify new packages have been installed
 
-    ```
+    ```bash
     which jq
     ```
 
