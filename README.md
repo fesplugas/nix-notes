@@ -89,7 +89,7 @@ To run services like **PostgreSQL**, **RabbitMQ**, **Redis** I'm using a combina
 - [nix-direnv](https://github.com/nix-community/nix-direnv) to enable the packages
 - [hivemind](https://github.com/DarthSim/hivemind#usage) to start the processes
 
-1. `shell.nix`
+This `shell.nix` installs Hivemind, PostgreSQL and Redis. Once the nix-shell is enabled you can run `hivemind` to start the services.
 
     ```nix
     let
