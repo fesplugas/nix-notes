@@ -7,11 +7,9 @@ As a developer I was using:
 - [Homebrew](https://brew.sh)
 - [ASDF](https://github.com/asdf-vm/asdf) + Multiple Plugins
 
-I wanted to something different to manage my development environment but with some constraints.
+I wanted to something different to manage my development environment but with some constraints. The new tool should be fast and reproducible. Nix had been under my radar for some time but as it had and still has an "incredibly steep learning curve" I was postponing the adoption.
 
-The new tool should be fast and reproducible.
-
-Nix was under my radar for some time but as it had and still have an "incredibly steep learning curve" I was postponing the adoption.
+Here are my notes about how I use it.
 
 ## Install Nix and Some Global Packages
 
@@ -29,6 +27,10 @@ Nix was under my radar for some time but as it had and still have an "incredibly
     ```
     nix-env --install --remove-all --file env.nix
     ```
+
+## Nix-Darwing and system services ...
+
+WIP
 
 ## Install Custom Packages on a Project?
 
