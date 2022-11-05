@@ -33,7 +33,7 @@ You can search for new packages using the CLI tools or on https://search.nixos.o
 
 ## Install Custom Packages on a Project?
 
-I use [nix-shell][1] and [nix-direnv][2] to install custom packages or to pin versions. 
+I use [nix-shell][nix-shell] and [nix-direnv][nix-direnv] to install custom packages or to pin versions. 
 
 1. Enable `direnv` on your `~/.zshrc` configuration
 
@@ -86,7 +86,7 @@ I'm not using [nix-darwin](https://github.com/LnL7/nix-darwin) it requires some 
 To run services I'm using a combination of
 
 - `shell.nix` to define the packages and pin versions
-- [nix-direnv](https://github.com/nix-community/nix-direnv) to enable the packages
+- [nix-direnv][nix-direnv] to enable the packages
 - [hivemind](https://github.com/DarthSim/hivemind#usage) to start the processes
 
 This `shell.nix` installs **Hivemind**, **PostgreSQL** and **Redis**. Once the [nix-shell][nix-shell] is enabled you run **hivemind** to start the services.
