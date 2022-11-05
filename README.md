@@ -81,9 +81,9 @@ I use [nix-shell](https://nixos.org/manual/nix/stable/command-ref/nix-shell.html
 
 ## Nix-Darwin and Services
 
-I'm not using [nix-darwin](https://github.com/LnL7/nix-darwin) it requires some hacks to make latest PostgreSQL and Redis versions work.
+I'm not using [nix-darwin](https://github.com/LnL7/nix-darwin) it requires some hacks to make latest **PostgreSQL** and **Redis** versions work.
 
-To run services like PostgreSQL, RabbitMQ, Redis I'm using a combination of
+To run services like **PostgreSQL**, **RabbitMQ**, **Redis** I'm using a combination of
 
 - `shell.nix` to define the packages and pin versions
 - [nix-direnv](https://github.com/nix-community/nix-direnv) to enable the packages
