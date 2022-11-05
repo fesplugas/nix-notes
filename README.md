@@ -15,18 +15,50 @@
     nix-env --install --remove-all --file env.nix
     ```
 
-## Home Manager
+## Install Custom Packages on a Project?
 
-1. [Install Home Manager](https://nix-community.github.io/home-manager/index.html#sec-install-standalone)
+We use [nix-shell](https://nixos.org/manual/nix/stable/command-ref/nix-shell.html) and [nix-direnv](https://github.com/nix-community/nix-direnv) to install custom packages or to pin versions. 
 
-2. Edit home manager configuration
-
-    ```
-    home-manager edit
-    ```
-
-3. And then switch the configuration
+1. Enable `direnv` on your `~/.zshrc` configuration
 
     ```
-    home-manager switch
+    if type direnv &>/dev/null; then
+      export DIRENV_LOG_FORMAT=""
+      eval "$(direnv hook zsh)"
+    fi
+    ```
+    
+2. On your project add a `shell.nix` with your package list
+
+    ```
+    let
+      version = "nixpkgs-22.05-darwin";
+      nixpkgs = import (fetchTarball "https://github.com/nixos/nixpkgs/archive/${version}.tar.gz") {};
+    in
+      nixpkgs.mkShell {
+        buildInputs = [
+          nixpkgs.jq
+          nixpkgs.terraform
+          nixpkgs.terraform-docs
+          nixpkgs.terragrunt
+        ];
+      }
+    ```
+
+3. Create a `.envrc` file
+
+    ```
+    use nix
+    ```
+
+4. Allow the new `.envrc` file
+
+    ```
+    direnv allow
+    ```
+    
+5. Verify new packages have been installed
+
+    ```
+    which jq
     ```
