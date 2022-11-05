@@ -1,6 +1,6 @@
 # Nix Notes
 
-Since I started using **Darwin** based machines in 2003 I've used **Fink**, **MacPorts** and **Homebrew**.
+Since I started using **[Darwin][darwin]** based machines in 2003 I've used **Fink**, **MacPorts** and **Homebrew**.
 
 Last years my go to developer tools have been
 
@@ -133,6 +133,7 @@ in
 
 Once the [nix-shell][nix-shell] is enabled you run **hivemind** to start the services.
 
+[darwin]: https://en.wikipedia.org/wiki/Darwin_(operating_system)
 [nix]: https://nixos.org
 [nix-shell]: https://nixos.org/manual/nix/stable/command-ref/nix-shell.html
 [nix-direnv]: https://github.com/nix-community/nix-direnv
