@@ -4,12 +4,16 @@
 
 2. Add a new channel an update
 
+    ```
     nix-channel --add https://nixos.org/channels/nixpkgs-22.05-darwin
     nix-channel --update
+    ````
 
 3. Install packages
 
+    ```
     nix-env --install --remove-all --file env.nix
+    ```
 
 ## Home Manager
 
