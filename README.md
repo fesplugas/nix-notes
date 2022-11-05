@@ -89,7 +89,7 @@ To run services I'm using a combination of
 - [nix-direnv][nix-direnv] to enable the packages
 - [hivemind](https://github.com/DarthSim/hivemind#usage) to start the processes
 
-This `shell.nix` installs **Hivemind**, **PostgreSQL** and **Redis**. Once the [nix-shell][nix-shell] is enabled you run **hivemind** to start the services.
+This `shell.nix` installs **Hivemind**, **PostgreSQL** and **Redis**.
 
 ```nix
 let
@@ -130,6 +130,8 @@ in
     '';
   }
 ```
+
+Once the [nix-shell][nix-shell] is enabled you run **hivemind** to start the services.
 
 [nix]: https://nixos.org
 [nix-shell]: https://nixos.org/manual/nix/stable/command-ref/nix-shell.html
