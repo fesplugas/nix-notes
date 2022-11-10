@@ -137,3 +137,17 @@ Once the [nix-shell][nix-shell] is enabled you run `hivemind` to start the servi
 [nix]: https://nixos.org
 [nix-shell]: https://nixos.org/manual/nix/stable/command-ref/nix-shell.html
 [nix-direnv]: https://github.com/nix-community/nix-direnv
+
+## Custom Profiles
+
+Create a new profile
+
+    nix-env --switch-profile /nix/var/nix/profiles/per-user/$USER/foo
+    # List installed packages
+    nix-env --query
+    # Install a new package
+    nix-env -iA nixpkgs.subversion
+
+Go back to your default profile
+
+    nix-env --switch-profile /nix/var/nix/profiles/per-user/$USER/profile
