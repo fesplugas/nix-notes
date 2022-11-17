@@ -79,15 +79,19 @@ I use [nix-shell][nix-shell] and [nix-direnv][nix-direnv] to install custom pack
     which jq
     ```
 
----
+<details>
+  <summary>
+    Using [a non-standard file name][nix-direnv-non-standard]
+  </summary>
 
-You can also [use a non-standard file name][nix-direnv-non-standard]. Here you have a few examples:
+  Here you have a few examples:
 
-    ```
-    use nix ~/Code/fesplugas/nix-notes/config/iac.nix
-    use nix ~/Code/fesplugas/nix-notes/config/rails5.nix
-    use nix ~/Code/fesplugas/nix-notes/config/rails7.nix
-    ```
+  ```
+  use nix ~/Code/fesplugas/nix-notes/config/iac.nix
+  use nix ~/Code/fesplugas/nix-notes/config/rails5.nix
+  use nix ~/Code/fesplugas/nix-notes/config/rails7.nix
+  ```
+</details>
 
 ## Nix-Darwin and Services
 
