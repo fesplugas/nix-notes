@@ -43,7 +43,7 @@ I use [nix-shell][nix-shell] and [nix-direnv][nix-direnv] to install custom pack
       eval "$(direnv hook zsh)"
     fi
     ```
-    
+
 2. On your project add a `shell.nix` with your package list
 
     ```nix
@@ -72,11 +72,21 @@ I use [nix-shell][nix-shell] and [nix-direnv][nix-direnv] to install custom pack
     ```bash
     direnv allow
     ```
-    
+
 5. Verify new packages have been installed
 
     ```bash
     which jq
+    ```
+
+---
+
+You can also [use a non-standard file name][nix-direnv-non-standard]. Here you have a few examples:
+
+    ```
+    use nix ~/Code/fesplugas/nix-notes/config/iac.nix
+    use nix ~/Code/fesplugas/nix-notes/config/rails5.nix
+    use nix ~/Code/fesplugas/nix-notes/config/rails7.nix
     ```
 
 ## Nix-Darwin and Services
@@ -137,6 +147,7 @@ Once the [nix-shell][nix-shell] is enabled you run `hivemind` to start the servi
 [nix]: https://nixos.org
 [nix-shell]: https://nixos.org/manual/nix/stable/command-ref/nix-shell.html
 [nix-direnv]: https://github.com/nix-community/nix-direnv
+[nix-direnv-non-standard]: https://github.com/nix-community/nix-direnv#using-a-non-standard-file-name
 
 ## Custom Profiles
 
