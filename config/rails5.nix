@@ -15,6 +15,6 @@ in
       export PATH=$PWD/bin:$PATH
       mkdir -p $GEM_HOME
 
-      gem install bundler --version=2.3.25 --no-document --conservative
+      gem install bundler --version=2.3.26 --no-document --conservative
     '';
   }
