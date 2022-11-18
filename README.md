@@ -94,17 +94,15 @@ mkShell {
   ];
 
   shellHook = ''
-    export DATA=$PWD/data
-
-    mkdir -p $DATA/redis
-    cat << EOF > $DATA/redis/redis.conf
+    mkdir -p data/redis
+    cat << EOF > data/redis/redis.conf
     loglevel warning
     logfile ""
     dir ./data/redis
     EOF
 
     cat << EOF > Procfile
-    redis: redis-server \$DATA/redis/redis.conf
+    redis: redis-server data/redis/redis.conf
     EOF
   '';
 }
