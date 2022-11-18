@@ -83,54 +83,39 @@ use nix ~/Code/fesplugas/nix-notes/config/rails7.nix
 
 ## Nix-Darwin and Services
 
-I'm not using [nix-darwin](https://github.com/LnL7/nix-darwin) it requires some hacks to make latest **PostgreSQL** and **Redis** versions work.
+I'm not using [nix-darwin](https://github.com/LnL7/nix-darwin) as it requires some hacks to make latest **PostgreSQL** and **Redis** versions work.
 
 To run services I'm using a combination of
 
 - `shell.nix` to define the packages and pin versions
-- [nix-direnv][nix-direnv] to enable the packages
+- [nix-direnv][nix-direnv] to start a `nix-shell`
 - [hivemind](https://github.com/DarthSim/hivemind#usage) to start the processes
 
-This `shell.nix` installs **Hivemind**, **PostgreSQL** and **Redis**.
+As an example this `shell.nix` installs **Hivemind** and **Redis** and creates a `Procfile` which is used by **Hivemind** to start the processes.
 
 ```nix
-let
-  nixpkgs = import <nixpkgs-22.05-darwin> {};
-  postgresql = "postgresql_14";
-in
-  nixpkgs.mkShell {
-    buildInputs = [
-      nixpkgs.hivemind
-      nixpkgs.${postgresql}
-      nixpkgs.redis
-    ];
+with (import <nixpkgs-22.05-darwin> {});
+mkShell {
+  buildInputs = [
+    hivemind
+    redis
+  ];
 
-    shellHook = ''
-      export DATA=$PWD/data
-      mkdir -p $DATA
+  shellHook = ''
+    export DATA=$PWD/data
 
-      # Redis Configuration
-      mkdir -p $DATA/redis
-      cat << EOF > $DATA/redis/redis.conf
-      loglevel warning
-      logfile ""
-      dir ./data/redis
-      EOF
+    mkdir -p $DATA/redis
+    cat << EOF > $DATA/redis/redis.conf
+    loglevel warning
+    logfile ""
+    dir ./data/redis
+    EOF
 
-      # PostgreSQL Configuration
-      export PGDATA=$DATA/${postgresql}
-      if [[ ! -d "$PGDATA" ]]; then
-        initdb --auth=trust --no-locale --encoding=UTF8
-        echo "CREATE DATABASE $USER;" | postgres --single -E postgres
-      fi
-
-      # Create Procfile
-      cat << EOF > Procfile
-      postgresql: postgres -D \$PGDATA
-      redis: redis-server \$DATA/redis/redis.conf
-      EOF
-    '';
-  }
+    cat << EOF > Procfile
+    redis: redis-server \$DATA/redis/redis.conf
+    EOF
+  '';
+}
 ```
 
 Once the [nix-shell][nix-shell] is enabled you run `hivemind` to start the services.
