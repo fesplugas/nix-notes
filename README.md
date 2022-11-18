@@ -77,9 +77,7 @@ I use [nix-shell][nix-shell] and [nix-direnv][nix-direnv] to install custom pack
 
 ## Nix-Darwin and Services
 
-I'm not using [nix-darwin](https://github.com/LnL7/nix-darwin) as it requires some hacks to make latest **PostgreSQL** and **Redis** versions work.
-
-To run services I'm using a combination of
+I'm not using [nix-darwin](https://github.com/LnL7/nix-darwin) as it requires some hacks to make latest **PostgreSQL** and **Redis** versions work. To run services I'm using a combination of
 
 - `shell.nix` to define the packages and pin versions
 - [nix-direnv][nix-direnv] to start a `nix-shell`
@@ -114,22 +112,26 @@ mkShell {
 
 Once the [nix-shell][nix-shell] is enabled you run `hivemind` to start the services.
 
+## Custom Profiles
+
+Create a new profile
+
+```bash
+nix-env --switch-profile /nix/var/nix/profiles/per-user/$USER/foo
+# List installed packages
+nix-env --query
+# Install a new package
+nix-env -iA nixpkgs.subversion
+```
+
+Go back to your default profile
+
+```bash
+nix-env --switch-profile /nix/var/nix/profiles/per-user/$USER/profile
+```
+
 [darwin]: https://en.wikipedia.org/wiki/Darwin_(operating_system)
 [nix]: https://nixos.org
 [nix-shell]: https://nixos.org/manual/nix/stable/command-ref/nix-shell.html
 [nix-direnv]: https://github.com/nix-community/nix-direnv
 [nix-direnv-non-standard]: https://github.com/nix-community/nix-direnv#using-a-non-standard-file-name
-
-## Custom Profiles
-
-Create a new profile
-
-    nix-env --switch-profile /nix/var/nix/profiles/per-user/$USER/foo
-    # List installed packages
-    nix-env --query
-    # Install a new package
-    nix-env -iA nixpkgs.subversion
-
-Go back to your default profile
-
-    nix-env --switch-profile /nix/var/nix/profiles/per-user/$USER/profile
