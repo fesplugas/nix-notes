@@ -121,7 +121,7 @@ nix-env --switch-profile /nix/var/nix/profiles/per-user/$USER/foo
 # List installed packages
 nix-env --query
 # Install a new package
-nix-env -iA nixpkgs.subversion
+nix-env -iA nixpkgs.hello
 ```
 
 Go back to your default profile
