@@ -59,6 +59,8 @@ I use [nix-shell][nix-shell] and [nix-direnv][nix-direnv] to install custom pack
 
     ```
     use nix
+    # You can also use a non-standard file name
+    # use nix config/hello.nix
     ```
 
 4. Allow the new `.envrc` file
@@ -72,14 +74,6 @@ I use [nix-shell][nix-shell] and [nix-direnv][nix-direnv] to install custom pack
     ```bash
     which hello
     ```
-
-You can also [use a non-standard file name][nix-direnv-non-standard]. Here you have a few examples:
-
-```direnv
-use nix ~/Code/fesplugas/nix-notes/config/iac.nix
-use nix ~/Code/fesplugas/nix-notes/config/rails5.nix
-use nix ~/Code/fesplugas/nix-notes/config/rails7.nix
-```
 
 ## Nix-Darwin and Services
 
