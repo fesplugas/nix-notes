@@ -47,18 +47,12 @@ I use [nix-shell][nix-shell] and [nix-direnv][nix-direnv] to install custom pack
 2. On your project add a `shell.nix` with your package list
 
     ```nix
-    let
-      version = "nixpkgs-22.05-darwin";
-      nixpkgs = import (fetchTarball "https://github.com/nixos/nixpkgs/archive/${version}.tar.gz") {};
-    in
-      nixpkgs.mkShell {
-        buildInputs = [
-          nixpkgs.jq
-          nixpkgs.terraform
-          nixpkgs.terraform-docs
-          nixpkgs.terragrunt
-        ];
-      }
+    with (import <nixpkgs-22.05-darwin> {});
+    mkShell {
+      buildInputs = [
+        hello
+      ];
+    }
     ```
 
 3. Create a `.envrc` file
@@ -76,7 +70,7 @@ I use [nix-shell][nix-shell] and [nix-direnv][nix-direnv] to install custom pack
 5. Verify new packages have been installed
 
     ```bash
-    which jq
+    which hello
     ```
 
 You can also [use a non-standard file name][nix-direnv-non-standard]. Here you have a few examples:
