@@ -3,6 +3,7 @@ mkShell {
   buildInputs = [
     awscli2
     jq
+    packer
     ruby_3_1
     terraform
     terraform-docs
