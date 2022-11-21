@@ -1,6 +1,6 @@
 let
   nixpkgs = import <nixpkgs-22.05-darwin> {};
-  nixpkgsUnstable = import <nixpkgs-unstable> {};
+  nixpkgsUnstable = import <nixpkgs> {};
 in [
   nixpkgs.ack
   nixpkgs.awscli2

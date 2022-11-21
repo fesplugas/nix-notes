@@ -16,9 +16,10 @@ Here are my notes about how I use it.
 
 1. [Install Nix](https://nixos.org/manual/nix/stable/installation/installing-binary.html#installing-a-binary-distribution)
 
-2. Add a new channel an update
+2. Add channels an update
 
     ```bash
+    nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
     nix-channel --add https://nixos.org/channels/nixpkgs-22.05-darwin
     nix-channel --update
     ````
