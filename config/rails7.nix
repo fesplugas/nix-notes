@@ -1,7 +1,10 @@
 with (import <nixpkgs-22.05-darwin> {});
 mkShell {
   buildInputs = [
+    cmake
     openssl
+    pkg-config
+    rubyPackages_3_1.rugged
     ruby_3_1
   ];
   shellHook = ''
