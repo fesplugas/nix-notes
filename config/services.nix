@@ -1,5 +1,5 @@
 let
-  nixpkgs = import <nixpkgs-22.05-darwin> {};
+  nixpkgs = import <nixpkgs-22.11-darwin> {};
   postgresql = "postgresql_14";
 in
   nixpkgs.mkShell {

@@ -1,5 +1,5 @@
 let
-  nixpkgs = import <nixpkgs-22.05-darwin> {};
+  nixpkgs = import <nixpkgs-22.11-darwin> {};
   nixpkgsUnstable = import <nixpkgs> {};
 in [
   nixpkgs.ack

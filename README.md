@@ -20,7 +20,6 @@ Here are my notes about how I use it.
 
     ```bash
     nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
-    nix-channel --add https://nixos.org/channels/nixpkgs-22.05-darwin
     nix-channel --add https://nixos.org/channels/nixpkgs-22.11-darwin
     nix-channel --update
     ````
@@ -49,7 +48,7 @@ I use [nix-shell][nix-shell] and [nix-direnv][nix-direnv] to install custom pack
 2. On your project add a `shell.nix` with your package list
 
     ```nix
-    with (import <nixpkgs-22.05-darwin> {});
+    with (import <nixpkgs-22.11-darwin> {});
     mkShell {
       buildInputs = [
         hello
@@ -88,7 +87,7 @@ I'm not using [nix-darwin](https://github.com/LnL7/nix-darwin) as it requires so
 As an example this `shell.nix` installs **Hivemind** and **Redis** and creates a `Procfile` which is used by **Hivemind** to start the processes.
 
 ```nix
-with (import <nixpkgs-22.05-darwin> {});
+with (import <nixpkgs-22.11-darwin> {});
 mkShell {
   buildInputs = [
     hivemind
