@@ -20,6 +20,9 @@ Here are my notes about how I use it.
 
     ```bash
     nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
+    nix-channel --add https://nixos.org/channels/nixpkgs-21.05-darwin
+    nix-channel --add https://nixos.org/channels/nixpkgs-21.11-darwin
+    nix-channel --add https://nixos.org/channels/nixpkgs-22.05-darwin
     nix-channel --add https://nixos.org/channels/nixpkgs-22.11-darwin
     nix-channel --update
     ````
