@@ -17,5 +17,6 @@ mkShell {
     mkdir -p $GEM_HOME
 
     gem install bundler --version=2.3.26 --no-document --conservative
+    gem install foreman --no-document --conservative
   '';
 }
