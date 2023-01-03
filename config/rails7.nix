@@ -1,4 +1,5 @@
 with (import <nixpkgs-22.11-darwin> {});
+
 mkShell {
   buildInputs = [
     cmake
@@ -16,7 +17,7 @@ mkShell {
     export PATH=$PWD/bin:$PATH
     mkdir -p $GEM_HOME
 
-    gem install bundler --version ">= 2.4" --no-document --conservative
-    gem install foreman --no-document --conservative
+    gem install bundler --version "~> 2.4.0" --conservative
+    gem install foreman --version "~> 0.87.0" --conservative
   '';
 }
