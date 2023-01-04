@@ -7,6 +7,7 @@ in [
   nixpkgs.awslogs
   nixpkgs.backblaze-b2
   nixpkgs.bash
+  nixpkgs.bat
   nixpkgs.cmake
   nixpkgs.coreutils
   nixpkgs.ctags
@@ -32,13 +33,18 @@ in [
   nixpkgs.pgcli
   nixpkgs.postgresql_14
   nixpkgs.pwgen
+  nixpkgs.python310
+  nixpkgs.python310Packages.pip
   nixpkgs.redis
   nixpkgs.restic
+  nixpkgs.riot-redis
   nixpkgs.ripgrep
   nixpkgs.rsync
   nixpkgs.ruby_3_1
   nixpkgs.shellcheck
   nixpkgs.stow
+  nixpkgs.terraform
+  nixpkgs.tree
   nixpkgs.vim
   nixpkgs.virtualenv
   nixpkgs.wget
@@ -46,10 +52,6 @@ in [
   nixpkgs.zsh
   nixpkgs.zsh-autosuggestions
   nixpkgs.zsh-completions
-] ++ [
-  # Unstable Packages
-  # nixpkgsUnstable.riot-redis
-  nixpkgsUnstable.python311
 ] ++ (if nixpkgs.stdenv.isDarwin then [
   # Darwin Packages
   # nixpkgs.cocoapods
