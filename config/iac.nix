@@ -9,6 +9,4 @@ mkShell {
     terraform-docs
     terragrunt
   ];
-  shellHook = ''
-  '';
 }

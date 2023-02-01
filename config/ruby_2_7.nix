@@ -9,12 +9,11 @@ in
     ];
 
     shellHook = ''
-      export GEM_HOME=$PWD/.nix-gems
+      export GEM_HOME=$HOME/.local/share/gem/ruby/2.7.0
       export GEM_PATH=$GEM_HOME
       export PATH=$GEM_HOME/bin:$PATH
-      export PATH=$PWD/bin:$PATH
       mkdir -p $GEM_HOME
 
-      gem install bundler --version=2.3.26 --no-document --conservative
+      gem install bundler --version="~> 2.4.0" --no-document --conservative
     '';
   }

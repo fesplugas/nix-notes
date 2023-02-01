@@ -1,6 +1,6 @@
 let
   nixpkgs = import <nixpkgs-22.11-darwin> {};
-  postgresql = "postgresql_15";
+  postgresql = "postgresql_14";
 in
   nixpkgs.mkShell {
     buildInputs = [
