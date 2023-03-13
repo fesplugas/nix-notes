@@ -2,7 +2,7 @@
 
 Since I started using **[Darwin][darwin]** based machines in 2003 I've used **Fink**, **MacPorts**, **Stow** and **Homebrew**.
 
-Last years my go to developer tools have been
+For the last few years my go to developer tools have been
 
 - [Homebrew](https://brew.sh)
 - [ASDF](https://github.com/asdf-vm/asdf) and [Multiple Plugins](https://github.com/asdf-vm/asdf-plugins#plugin-list)
@@ -37,7 +37,7 @@ You can search for new packages using the CLI tools or on https://search.nixos.o
 
 ## Install Custom Packages on a Project?
 
-I use [nix-shell][nix-shell] and [nix-direnv][nix-direnv] to install custom packages or to pin versions. 
+I use [nix-shell][nix-shell] and [nix-direnv][nix-direnv] to install custom packages or to pin versions.
 
 1. Enable `direnv` on your `~/.zshrc` configuration
 
@@ -59,7 +59,7 @@ I use [nix-shell][nix-shell] and [nix-direnv][nix-direnv] to install custom pack
     }
     ```
 
-3. Create a `.envrc` file
+3. Create an `.envrc` file
 
     ```
     use nix
