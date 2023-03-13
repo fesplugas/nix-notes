@@ -8,7 +8,7 @@ mkShell {
   ];
 
   shellHook = ''
-    export GEM_HOME=$HOME/.local/share/gem/ruby/2.6.0
+    export GEM_HOME=$HOME/.local/share/gem/ruby/2.6.0-nix
     export GEM_PATH=$GEM_HOME
     export PATH=$GEM_HOME/bin:$PATH
     mkdir -p $GEM_HOME
