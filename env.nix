@@ -1,11 +1,6 @@
 let
-  nixpkgs = import <nixpkgs-22.11-darwin> {};
-  nixpkgsUnstable = import <nixpkgs-unstable> {};
+  nixpkgs = import <nixpkgs-22.11> {};
 in [
-  # nixpkgs.python3Full
-  # nixpkgs.riot-redis
-  # nixpkgs.tree
-  # nixpkgs.virtualenv
   nixpkgs.ack
   nixpkgs.asdf-vm
   nixpkgs.awscli2
@@ -59,8 +54,4 @@ in [
   nixpkgs.zsh
   nixpkgs.zsh-autosuggestions
   nixpkgs.zsh-completions
-] ++ (if nixpkgs.stdenv.isDarwin then [
-  # Darwin Packages
-  # nixpkgs.cocoapods
-] else [
-])
+]
