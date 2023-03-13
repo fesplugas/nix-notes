@@ -1,4 +1,5 @@
-with (import <nixpkgs-22.11-darwin> {});
+with (import <nixpkgs-22.11> {});
+
 mkShell {
   buildInputs = [
     hivemind
