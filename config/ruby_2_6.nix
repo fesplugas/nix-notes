@@ -11,7 +11,6 @@ mkShell {
     export GEM_HOME=$HOME/.local/share/gem/ruby/2.6.0-nix
     export GEM_PATH=$GEM_HOME
     export PATH=$GEM_HOME/bin:$PATH
-    mkdir -p $GEM_HOME
 
     gem install bundler --version="~> 2.4.0" --no-document --conservative
   '';

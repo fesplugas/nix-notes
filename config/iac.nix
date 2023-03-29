@@ -15,6 +15,5 @@ mkShell {
     export GEM_HOME=$HOME/.local/share/gem/ruby/3.1.0-nix
     export GEM_PATH=$GEM_HOME
     export PATH=$GEM_HOME/bin:$PATH
-    mkdir -p $GEM_HOME
   '';
 }
