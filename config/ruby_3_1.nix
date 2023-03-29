@@ -1,4 +1,4 @@
-with (import <nixpkgs-22.11> {});
+with (import <nixpkgs> {});
 mkShell {
   buildInputs = [
     cmake

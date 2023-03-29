@@ -1,29 +1,17 @@
-{ pkgs ? import <nixpkgs> {} }:
-
-let
-  ruby_3_2 = pkgs.ruby.overrideAttrs(attrs: {
-    version = "3.2.0";
-    src = pkgs.fetchurl {
-      url = "https://cache.ruby-lang.org/pub/ruby/3.2/ruby-3.2.0.tar.gz";
-      sha256 = "daaa78e1360b2783f98deeceb677ad900f3a36c0ffa6e2b6b19090be77abc272";
-    };
-    patches = [];
-    postPatch = "";
-  });
-in pkgs.mkShell {
-  buildInputs = with pkgs; [
-    ruby_3_2
-
+with (import <nixpkgs> {});
+mkShell {
+  buildInputs = [
     cmake
     nodejs-16_x
     openssl
     pkg-config
-    rubyPackages_3_1.rugged
+    # rubyPackages_3_2.rugged
+    ruby_3_2
     yarn
   ];
 
   shellHook = ''
-    export GEM_HOME=$HOME/.local/share/gem/ruby/3.2.0
+    export GEM_HOME=$HOME/.local/share/gem/ruby/3.2.0-nix
     export GEM_PATH=$GEM_HOME
     export PATH=$GEM_HOME/bin:$PATH
     mkdir -p $GEM_HOME
