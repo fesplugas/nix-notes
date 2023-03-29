@@ -5,7 +5,6 @@ mkShell {
     nodejs-16_x
     openssl
     pkg-config
-    rubyPackages_3_1.rugged
     ruby_3_1
     yarn
   ];
