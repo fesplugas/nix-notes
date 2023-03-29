@@ -87,29 +87,10 @@ I'm not using [nix-darwin](https://github.com/LnL7/nix-darwin) as it requires so
 - [nix-direnv][nix-direnv] to start a `nix-shell`
 - [hivemind](https://github.com/DarthSim/hivemind#usage) to start the processes
 
-As an example this `shell.nix` installs **Hivemind** and **Redis** and creates a `Procfile` which is used by **Hivemind** to start the processes.
+As an example `config/redis.nix` installs **Hivemind** and **Redis**, creates a `Procfile` which is used by **Hivemind** to start the processes.
 
-```nix
-with (import <nixpkgs> {});
-mkShell {
-  buildInputs = [
-    hivemind
-    redis
-  ];
-
-  shellHook = ''
-    mkdir -p data/redis
-    cat << EOF > data/redis/redis.conf
-    loglevel warning
-    logfile ""
-    dir ./data/redis
-    EOF
-
-    cat << EOF > Procfile
-    redis: redis-server data/redis/redis.conf
-    EOF
-  '';
-}
+```
+nix-shell config/redis.nix
 ```
 
 Once the [nix-shell][nix-shell] is enabled you run `hivemind` to start the services.
