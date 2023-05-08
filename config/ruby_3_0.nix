@@ -5,13 +5,12 @@ mkShell {
     nodejs-16_x
     openssl
     pkg-config
-    ruby_3_1
-    rubyPackages_3_1.openssl
+    ruby_3_0
     yarn
   ];
 
   shellHook = ''
-    export GEM_HOME=$HOME/.local/share/gem/ruby/3.1.0-nix
+    export GEM_HOME=$HOME/.local/share/gem/ruby/3.0.0-nix
     export GEM_PATH=$GEM_HOME
     export PATH=$GEM_HOME/bin:$PATH
 
