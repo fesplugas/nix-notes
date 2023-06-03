@@ -2,7 +2,7 @@ with (import <nixpkgs> {});
 mkShell {
   buildInputs = [
     cmake
-    nodejs-16_x
+    nodejs_18
     openssl
     pkg-config
     ruby_3_2
@@ -10,7 +10,7 @@ mkShell {
   ];
 
   shellHook = ''
-    export GEM_HOME=$HOME/.local/share/gem/ruby/3.2.0-nix
+    export GEM_HOME=$HOME/.local/share/gem/ruby/3.2.0
     export GEM_PATH=$GEM_HOME
     export PATH=$GEM_HOME/bin:$PATH
 
