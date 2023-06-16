@@ -1,4 +1,5 @@
-with (import <nixpkgs> {});
+# with (import <nixpkgs> {});
+with (import (fetchTarball https://github.com/nixos/nixpkgs/archive/nixpkgs-unstable.tar.gz) {});
 
 mkShell {
   name = "hello-world";
