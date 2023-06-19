@@ -41,9 +41,9 @@ You can search for new packages using the CLI tools or on https://search.nixos.o
 
 You can install packages globally, this is not the recommended way to install packages but I use it to make Nix work as Homebrew. In my experience this way of installing packages works in most of the case until you have to compile some packages.
 
-    ```bash
-    nix-env --install --remove-all --file env.nix
-    ```
+```bash
+nix-env --install --remove-all --file env.nix
+```
 
 ## Install Custom Packages on a Project?
 
