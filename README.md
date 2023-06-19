@@ -14,7 +14,7 @@ Here are my notes about how I use it.
 
 ## Install Nix and Some Global Packages
 
-1. Install **Nix** by using the [Official Installer](https://nixos.org/manual/nix/stable/installation/installing-binary.html#installing-a-binary-distribution) or [Determinate Nix Installer](https://github.com/DeterminateSystems/nix-installer#readme)
+1. Install **Nix** by using the [Official Installer](https://nixos.org/manual/nix/stable/installation/installing-binary.html#multi-user-installation) or [Determinate Nix Installer](https://github.com/DeterminateSystems/nix-installer#readme)
 
 2. Add channels
 
