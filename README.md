@@ -49,45 +49,45 @@ nix-env --install --remove-all --file env.nix
 
 I use [nix-shell][nix-shell] and [nix-direnv][nix-direnv] to install custom packages or to pin versions.
 
-1. Enable `direnv` on your `~/.zshrc` configuration
+Enable `direnv` on your `~/.zshrc` configuration
 
-    ```bash
-    if type direnv &>/dev/null; then
-      export DIRENV_LOG_FORMAT=""
-      eval "$(direnv hook zsh)"
-    fi
-    ```
+```bash
+if type direnv &>/dev/null; then
+  export DIRENV_LOG_FORMAT=""
+  eval "$(direnv hook zsh)"
+fi
+```
 
-2. On your project add a `shell.nix` with your package list
+On your project add a `shell.nix` with your package list
 
-    ```nix
-    with (import <nixpkgs> {});
-    mkShell {
-      buildInputs = [
-        hello
-      ];
-    }
-    ```
+```nix
+with (import <nixpkgs> {});
+mkShell {
+  buildInputs = [
+    hello
+  ];
+}
+```
 
-3. Create an `.envrc` file
+Create an `.envrc` file
 
-    ```
-    use nix
-    # You can also use a non-standard file name
-    # use nix config/hello.nix
-    ```
+```bash
+use nix
+# You can also use a non-standard file name
+# use nix config/hello.nix
+```
 
-4. Allow the new `.envrc` file
+Allow the new `.envrc` file
 
-    ```bash
-    direnv allow
-    ```
+```bash
+direnv allow
+```
 
-5. Verify new packages have been installed
+Verify new packages have been installed
 
-    ```bash
-    which hello
-    ```
+```bash
+which hello
+```
 
 ## Nix-Darwin and Services
 
