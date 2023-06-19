@@ -14,23 +14,36 @@ Here are my notes about how I use it.
 
 ## Install Nix and Some Global Packages
 
-1. [Install Nix](https://nixos.org/manual/nix/stable/installation/installing-binary.html#installing-a-binary-distribution)
+1. Install **Nix** by using the [Official Installer](https://nixos.org/manual/nix/stable/installation/installing-binary.html#installing-a-binary-distribution) or [Determinate Nix Installer](https://github.com/DeterminateSystems/nix-installer#readme)
 
-2. Add channels an update
+2. Add channels
 
     ```bash
     nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
     nix-channel --add https://nixos.org/channels/nixpkgs-23.05-darwin nixpkgs-23.05
-    nix-channel --update
     ````
 
-3. Install packages
+3. Update channels
+
+    ```bash
+    nix-channel --update
+    ```
+
+4. Verify
+
+    ```bash
+    nix-shell -p hello --run "hello"
+    ```
+
+You can search for new packages using the CLI tools or on https://search.nixos.org/packages
+
+## Install Custom Package globally?
+
+You can install packages globally, this is not the recommended way to install packages but I use it to make Nix work as Homebrew. In my experience this way of installing packages works in most of the case until you have to compile some packages.
 
     ```bash
     nix-env --install --remove-all --file env.nix
     ```
-
-You can search for new packages using the CLI tools or on https://search.nixos.org/packages
 
 ## Install Custom Packages on a Project?
 
@@ -78,6 +91,8 @@ I use [nix-shell][nix-shell] and [nix-direnv][nix-direnv] to install custom pack
 
 ## Nix-Darwin and Services
 
+**Note:** You can also use [devenv.sh](https://devenv.sh/) to achieve a similar setup.
+
 I'm not using [nix-darwin](https://github.com/LnL7/nix-darwin) as it requires some hacks to make latest **PostgreSQL** and **Redis** versions work. To run services I'm using a combination of
 
 - `shell.nix` to define the packages and pin versions
@@ -115,3 +130,7 @@ nix-env --switch-profile /nix/var/nix/profiles/per-user/$USER/profile
 [nix-shell]: https://nixos.org/manual/nix/stable/command-ref/nix-shell.html
 [nix-direnv]: https://github.com/nix-community/nix-direnv
 [nix-direnv-non-standard]: https://github.com/nix-community/nix-direnv#using-a-non-standard-file-name
+
+## Gotchas
+
+- [Want to uninstall?](https://github.com/NixOS/nix/blob/master/doc/manual/src/installation/uninstall.md#macos)
