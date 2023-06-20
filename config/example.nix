@@ -1,5 +1,5 @@
 # { pkgs ? import <nixpkgs-23.05> {} }:
-{ pkgs ? import (fetchTarball "https://github.com/nixos/nixpkgs/archive/nixpkgs-21.05-darwin.tar.gz") {} }:
+{ pkgs ? import (fetchTarball "https://github.com/nixos/nixpkgs/archive/nixpkgs-23.05-darwin.tar.gz") {} }:
 
 let fooScript = pkgs.writeScriptBin "foo.sh" ''
   #!/bin/sh
