@@ -10,21 +10,18 @@
     let
       system = "aarch64-darwin";
       pkgs = nixpkgs.legacyPackages.${system}.pkgs;
-      fooScript = pkgs.writeScriptBin "foo.sh" ''
+      helloScript = pkgs.writeScriptBin "hello.sh" ''
         #!/bin/sh
+        echo "Hello World"
+        # Show we can also echo $FOO
         echo $FOO
       '';
     in {
       devShell.${system} = pkgs.mkShell {
-        # name = "My-project build environment";
+        name = "my-project-dev-shell";
         buildInputs = [
-          pkgs.git
-          # pkgs.python39
-          # pkgs.python39Packages.tox
-          # pkgs.python39Packages.flake8
-          # pkgs.python39Packages.requests
-          # pkgs.python39Packages.ipython
-          fooScript
+          pkgs.hello
+          helloScript
         ];
         shellHook = ''
           echo "Welcome in $name"
