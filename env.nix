@@ -1,5 +1,5 @@
 let
-  nixpkgs = import <nixpkgs-22.11> {};
+  nixpkgs = import <nixpkgs-23.05> {};
 in [
   nixpkgs.ack
   nixpkgs.asdf-vm
