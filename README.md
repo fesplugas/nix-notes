@@ -16,20 +16,19 @@ Here are my notes about how I use it.
 
 1. Install **Nix** by using the [Official Installer](https://nixos.org/manual/nix/stable/installation/installing-binary.html#multi-user-installation) or [Determinate Nix Installer](https://github.com/DeterminateSystems/nix-installer#readme)
 
-2. Add channels
+    ```
+    curl -L https://releases.nixos.org/nix/nix-2.13.4/install | sh -s -- --daemon
+    ```
+
+2. Add channels and run the updater
 
     ```bash
     nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
     nix-channel --add https://nixos.org/channels/nixpkgs-23.05-darwin nixpkgs-23.05
+    nix-channel --update
     ````
 
-3. Update channels
-
-    ```bash
-    nix-channel --update
-    ```
-
-4. Verify
+3. Verify
 
     ```bash
     nix-shell -p hello --run "hello"
