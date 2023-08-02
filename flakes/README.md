@@ -1,2 +1,3 @@
-Introduction to Flakes
+# Nix Notes - Flakes
 
+Introduction to Flakes ...
