@@ -19,3 +19,5 @@ sudo rm -rf /etc/nix /var/root/.nix-profile /var/root/.nix-defexpr /var/root/.ni
 sudo diskutil apfs deleteVolume /nix
 
 diskutil list
+
+sudo /usr/bin/sed -i '' '/nix/d' /etc/synthetic.conf
