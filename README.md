@@ -17,7 +17,7 @@ Here are my notes about how I use it.
 1. Install **Nix** by using the [Official Installer](https://nixos.org/manual/nix/stable/installation/installing-binary.html#multi-user-installation) or [Determinate Nix Installer](https://github.com/DeterminateSystems/nix-installer#readme)
 
     ```
-    curl -L https://releases.nixos.org/nix/nix-2.14.1/install | sh -s -- --daemon
+    curl -L https://releases.nixos.org/nix/nix-2.17.0/install | sh -s -- --daemon
     ```
 
 2. Add channels and run the updater
