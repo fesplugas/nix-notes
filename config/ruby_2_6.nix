@@ -1,4 +1,5 @@
 with (import (fetchTarball https://github.com/nixos/nixpkgs/archive/nixpkgs-21.05-darwin.tar.gz) {});
+
 mkShell {
   buildInputs = [
     openssl

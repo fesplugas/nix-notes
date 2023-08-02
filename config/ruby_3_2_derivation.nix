@@ -1,4 +1,5 @@
-with (import <nixpkgs-23.05> {});
+with (import (fetchTarball https://github.com/nixos/nixpkgs/archive/nixpkgs-23.05-darwin.tar.gz) {});
+
 let
   myOpenSSL = openssl_1_1.override {
     # Add any custom OpenSSL configuration options here
