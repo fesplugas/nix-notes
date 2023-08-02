@@ -133,3 +133,16 @@ nix-env --switch-profile /nix/var/nix/profiles/per-user/$USER/profile
 ## Gotchas
 
 - [Want to uninstall?](https://github.com/NixOS/nix/blob/master/doc/manual/src/installation/uninstall.md#macos)
+
+### Having problems with the SSL certificate?
+
+Update `/etc/nix/nix.conf` and reload the deamon ...
+
+```
+echo "ssl-cert-file = /nix/var/nix/profiles/default/etc/ssl/certs/ca-bundle.crt" | sudo tee -a /etc/nix/nix.conf
+
+sudo launchctl unload /Library/LaunchDaemons/org.nixos.nix-daemon.plist
+sudo launchctl unload /Library/LaunchDaemons/org.nixos.darwin-store.plist
+sudo launchctl load /Library/LaunchDaemons/org.nixos.nix-daemon.plist
+sudo launchctl load /Library/LaunchDaemons/org.nixos.darwin-store.plist
+```
