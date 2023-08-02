@@ -96,7 +96,7 @@ As an example `config/redis.nix` installs **Hivemind** and **Redis**, creates a 
 nix-shell config/redis.nix
 ```
 
-Once the [nix-shell][nix-shell] is enabled you run `hivemind` to start the services.
+Once the [nix-shell][nix-shell] is enabled, run `hivemind` to start the services.
 
 ## Custom Profiles
 
