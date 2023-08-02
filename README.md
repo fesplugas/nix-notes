@@ -14,17 +14,17 @@ Here are my notes about how I use it.
 
 ## Install Nix and Some Global Packages
 
-1. Install **Nix** by using the [Official Installer](https://nixos.org/manual/nix/stable/installation/installing-binary.html#multi-user-installation) or [Determinate Nix Installer](https://github.com/DeterminateSystems/nix-installer#readme)
+Install **Nix** by using the [Official Installer](https://nixos.org/manual/nix/stable/installation/installing-binary.html#multi-user-installation) or [Determinate Nix Installer](https://github.com/DeterminateSystems/nix-installer#readme)
 
-    ```
-    curl -L https://releases.nixos.org/nix/nix-2.17.0/install | sh -s -- --daemon
-    ```
+```bash
+curl -L https://releases.nixos.org/nix/nix-2.17.0/install | sh -s -- --daemon
+```
 
-2. Verify
+Verify
 
-    ```bash
-    nix-shell -p hello --run "hello"
-    ```
+```bash
+nix-shell -p hello --run "hello"
+```
 
 You can search for new packages using the CLI tools or on https://search.nixos.org/packages
 
