@@ -1,5 +1,6 @@
 let
-  nixpkgs = import <nixpkgs-23.05> {};
+  version = "nixpkgs-23.05-darwin";
+  nixpkgs = import (fetchTarball "https://github.com/nixos/nixpkgs/archive/${version}.tar.gz") {};
 in [
   nixpkgs.ack
   nixpkgs.asdf-vm
