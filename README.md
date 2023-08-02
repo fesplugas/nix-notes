@@ -28,6 +28,8 @@ nix-shell -p hello --run "hello"
 
 You can search for new packages using the CLI tools or on https://search.nixos.org/packages
 
+[Want to uninstall?](https://github.com/NixOS/nix/blob/master/doc/manual/src/installation/uninstall.md#macos)
+
 ## Install Custom Packages Globally?
 
 You can install packages globally, this is not the recommended way to install packages but I use it to make Nix work as Homebrew. In my experience this way of installing packages works in most of the cases until you have to compile some packages.
@@ -123,8 +125,6 @@ nix-env --switch-profile /nix/var/nix/profiles/per-user/$USER/profile
 [nix-direnv-non-standard]: https://github.com/nix-community/nix-direnv#using-a-non-standard-file-name
 
 ## Gotchas
-
-- [Want to uninstall?](https://github.com/NixOS/nix/blob/master/doc/manual/src/installation/uninstall.md#macos)
 
 ### Having problems with the SSL certificate?
 
