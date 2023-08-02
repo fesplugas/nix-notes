@@ -3,18 +3,24 @@ let
   nixpkgs = import (fetchTarball "https://github.com/nixos/nixpkgs/archive/${version}.tar.gz") {};
 in [
   nixpkgs.ack
-  nixpkgs.asdf-vm
   nixpkgs.awscli2
   nixpkgs.awslogs
   nixpkgs.backblaze-b2
   nixpkgs.bash
   nixpkgs.bat
+  nixpkgs.cachix
   nixpkgs.cmake
+  nixpkgs.colima
   nixpkgs.coreutils
+  nixpkgs.cowsay
   nixpkgs.ctags
+  nixpkgs.delta
   nixpkgs.direnv
   nixpkgs.docker-client
   nixpkgs.exa
+  nixpkgs.ffmpeg
+  nixpkgs.figlet
+  nixpkgs.fira-mono
   nixpkgs.fzf
   nixpkgs.gh
   nixpkgs.git
@@ -23,35 +29,48 @@ in [
   nixpkgs.gnupg
   nixpkgs.gnused
   nixpkgs.go
+  nixpkgs.hello
   nixpkgs.hivemind
   nixpkgs.htop
   nixpkgs.imagemagick
+  nixpkgs.inetutils
+  nixpkgs.isync
   nixpkgs.jetbrains-mono
   nixpkgs.jq
+  nixpkgs.jujutsu
+  nixpkgs.libwebp
+  nixpkgs.libyaml
   nixpkgs.lsd
+  nixpkgs.niv
   nixpkgs.nix-direnv
   nixpkgs.nix-zsh-completions
-  nixpkgs.nodejs-18_x
+  nixpkgs.nodejs
+  nixpkgs.nomad
   nixpkgs.openssl
+  nixpkgs.packer
   nixpkgs.pgcli
   nixpkgs.pkg-config
+  nixpkgs.plantuml
   nixpkgs.postgresql_15
   nixpkgs.pwgen
-  nixpkgs.python310
-  nixpkgs.python310Packages.pip
+  nixpkgs.python311
+  nixpkgs.qemu
   nixpkgs.rabbitmq-server
   nixpkgs.redis
   nixpkgs.restic
   nixpkgs.ripgrep
   nixpkgs.rsync
-  nixpkgs.rubyPackages_3_1.openssl
-  nixpkgs.ruby_3_1
+  nixpkgs.ruby_3_2
   nixpkgs.shellcheck
+  nixpkgs.shunit2
   nixpkgs.stow
   nixpkgs.terraform
+  nixpkgs.tmux
+  nixpkgs.tree
   nixpkgs.vim
   nixpkgs.wget
   nixpkgs.yarn
+  nixpkgs.yq-go
   nixpkgs.zsh
   nixpkgs.zsh-autosuggestions
   nixpkgs.zsh-completions
