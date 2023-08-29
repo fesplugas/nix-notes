@@ -3,5 +3,6 @@ with (import (fetchTarball https://github.com/nixos/nixpkgs/archive/nixpkgs-23.0
 mkShell {
   buildInputs = [
     python38
+    libffi
   ];
 }
