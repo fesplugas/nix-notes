@@ -1,13 +1,15 @@
-with (import (fetchTarball https://github.com/nixos/nixpkgs/archive/nixpkgs-23.05-darwin.tar.gz) {});
-
-mkShell {
-  buildInputs = [
-    awscli2
-    jq
-    packer
-    ruby_3_2
-    terraform
-    terraform-docs
-    terragrunt
-  ];
-}
+let
+  version = "nixpkgs-23.05-darwin";
+  pkgs = import (fetchTarball "https://github.com/nixos/nixpkgs/archive/${version}.tar.gz") {};
+in
+  pkgs.mkShell {
+    packages = [
+      pkgs.awscli2
+      pkgs.jq
+      pkgs.packer
+      pkgs.ruby_3_2
+      pkgs.terraform
+      pkgs.terraform-docs
+      pkgs.terragrunt
+    ];
+  }
