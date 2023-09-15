@@ -73,7 +73,7 @@ Create an `.envrc` file
 ```bash
 use nix
 # You can also use a non-standard file name
-# use nix config/hello.nix
+# use nix shell.nix
 ```
 
 Allow the new `.envrc` file
