@@ -1,11 +1,14 @@
-with (import (fetchTarball https://github.com/nixos/nixpkgs/archive/nixpkgs-unstable.tar.gz) {});
+let
+  version = "nixpkgs-unstable";
+  pkgs = import (fetchTarball "https://github.com/nixos/nixpkgs/archive/${version}.tar.gz") {};
+in
+  pkgs.mkShell {
+    name = "hello-world";
+    packages = [
+      pkgs.hello
+    ];
 
-mkShell {
-  name = "hello-world";
-  buildInputs = [
-    hello
-  ];
-  shellHook = ''
-    echo "You are using a nix-shell!"
-  '';
-}
+    shellHook = ''
+      echo "You are using a nix-shell!"
+    '';
+  }
