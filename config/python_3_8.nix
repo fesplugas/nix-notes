@@ -3,8 +3,8 @@ let
   pkgs = import (fetchTarball "https://github.com/nixos/nixpkgs/archive/${version}.tar.gz") {};
 in
   pkgs.mkShell {
-    packages = [
-      pkgs.python38
-      pkgs.libffi
+    buildInputs = with pkgs; [
+      python38
+      libffi
     ];
   }

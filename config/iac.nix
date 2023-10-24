@@ -3,13 +3,13 @@ let
   pkgs = import (fetchTarball "https://github.com/nixos/nixpkgs/archive/${version}.tar.gz") {};
 in
   pkgs.mkShell {
-    packages = [
-      pkgs.awscli2
-      pkgs.jq
-      pkgs.packer
-      pkgs.ruby_3_2
-      pkgs.terraform
-      pkgs.terraform-docs
-      pkgs.terragrunt
+    packages = with pkgs; [
+      awscli2
+      jq
+      packer
+      ruby_3_2
+      terraform
+      terraform-docs
+      terragrunt
     ];
   }
