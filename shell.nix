@@ -1,13 +1,11 @@
 let
-  version = "nixpkgs-unstable";
-  pkgs = import (fetchTarball "https://github.com/nixos/nixpkgs/archive/${version}.tar.gz") {};
+  pkgs = import <nixpkgs> {};
 in
   pkgs.mkShell {
     name = "hello-world";
-    packages = [
+    buildInputs = [
       pkgs.hello
     ];
-
     shellHook = ''
       echo "You are using a nix-shell!"
     '';
