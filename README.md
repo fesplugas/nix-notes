@@ -102,10 +102,17 @@ Once [nix-shell][nix-shell] is enabled, run `hivemind` to start the services.
 
 ## Custom Profiles
 
+If you need to fix the profiles ...
+
+``
+sudo mkdir /nix/var/nix/profiles/per-user/fesplugas                       
+sudo chown -R $USER:nixbld /nix/var/nix/profiles/per-user/fesplugas
+```
+
 Create a new profile
 
 ```bash
-nix-env --switch-profile /nix/var/nix/profiles/per-user/$USER/foo
+nix-env --switch-profile /nix/var/nix/profiles/per-user/fesplugas/foo
 # List installed packages
 nix-env --query
 # Install a new package
