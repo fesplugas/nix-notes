@@ -84,7 +84,8 @@ which hello
 
 ## Nix-Darwin and Services
 
-**Note:** You can also use [devenv.sh](https://devenv.sh/) to achieve a similar setup.
+> [!NOTE]  
+> You can also use [devenv.sh](https://devenv.sh/) to achieve a similar setup.
 
 I'm not using [nix-darwin](https://github.com/LnL7/nix-darwin) as it requires some hacks to make latest **PostgreSQL** and **Redis** versions work. To run services I'm using a combination of
 
