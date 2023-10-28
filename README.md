@@ -104,7 +104,7 @@ Once [nix-shell][nix-shell] is enabled, run `hivemind` to start the services.
 
 If you need to fix the profiles ...
 
-``
+```
 sudo mkdir /nix/var/nix/profiles/per-user/fesplugas                       
 sudo chown -R $USER:nixbld /nix/var/nix/profiles/per-user/fesplugas
 ```
