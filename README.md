@@ -30,7 +30,7 @@ You can search for new packages using the CLI tools or on https://search.nixos.o
 
 [Want to uninstall?](https://github.com/NixOS/nix/blob/master/doc/manual/src/installation/uninstall.md#macos)
 
-## Install Packages?
+## How do I install packages?
 
 ### Without nix-darwin ...
 
@@ -88,18 +88,19 @@ Verify new packages have been installed
 which hello
 ```
 
-## Nix-Darwin and Services
+## How do I run services?
 
 > [!NOTE]  
 > You can also use [devenv.sh](https://devenv.sh/) to achieve a similar setup.
+> I'm not using [nix-darwin](https://github.com/LnL7/nix-darwin) as it requires some hacks to make **PostgreSQL** and **Redis** versions work.
 
-I'm not using [nix-darwin](https://github.com/LnL7/nix-darwin) as it requires some hacks to make latest **PostgreSQL** and **Redis** versions work. To run services I'm using a combination of
+To run services I'm using a combination of
 
 - `shell.nix` to define the packages and pin versions
 - [nix-direnv][nix-direnv] to start a `nix-shell`
 - [hivemind](https://github.com/DarthSim/hivemind#usage) to start the processes
 
-As an example `config/redis.nix` installs **Hivemind** and **Redis**, creates a `Procfile` which is used by **Hivemind** to start the processes.
+As an example `config/redis.nix` installs **Hivemind** and **Redis** and creates a `Procfile` which is used by **Hivemind** to start the processes.
 
 ```
 nix-shell config/redis.nix
