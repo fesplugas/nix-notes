@@ -100,10 +100,10 @@ To run services I'm using a combination of
 - [nix-direnv][nix-direnv] to start a `nix-shell`
 - [hivemind](https://github.com/DarthSim/hivemind#usage) to start the processes
 
-As an example `config/redis.nix` installs **Hivemind** and **Redis** and creates a `Procfile` which is used by **Hivemind** to start the processes.
+As an example `services/redis.nix` installs **Hivemind** and **Redis** and creates a `Procfile` which is used by **Hivemind** to start the processes.
 
 ```
-nix-shell config/redis.nix
+nix-shell services/redis.nix
 ```
 
 Once [nix-shell][nix-shell] is enabled, run `hivemind` to start the services.
