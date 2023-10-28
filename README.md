@@ -30,17 +30,23 @@ You can search for new packages using the CLI tools or on https://search.nixos.o
 
 [Want to uninstall?](https://github.com/NixOS/nix/blob/master/doc/manual/src/installation/uninstall.md#macos)
 
-## Install Custom Packages Globally?
+## Install Packages?
 
-You can install packages globally, this is not the recommended way to install packages but I use it to make Nix work as Homebrew. In my experience this way of installing packages works in most of the cases until you have to compile some packages.
+### Without nix-darwin ...
+
+Although this is not the recommended way to install packages I have used it in the past to make Nix work as Homebrew. Things will work properly until you have to compile packages, because not all libraries are linked in `~/.nix-profile/lib`.
 
 ```bash
 nix-env --install --remove-all --file env.nix
 ```
 
-## Install Custom Packages on a Project?
+### With nix-darwin
 
-I use [nix-shell][nix-shell] and [nix-direnv][nix-direnv] to install custom packages or to pin versions.
+WIP.
+
+### Custom Packages on a Project?
+
+I use a combination of [nix-shell][nix-shell] and [nix-direnv][nix-direnv] to install custom packages and/or to pin versions.
 
 Enable `direnv` on your `~/.zshrc` configuration
 
