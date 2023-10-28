@@ -103,13 +103,6 @@ Once [nix-shell][nix-shell] is enabled, run `hivemind` to start the services.
 
 ## Custom Profiles
 
-If you need to fix the profiles ...
-
-```
-sudo mkdir /nix/var/nix/profiles/per-user/fesplugas                       
-sudo chown -R $USER:nixbld /nix/var/nix/profiles/per-user/fesplugas
-```
-
 Create a new profile
 
 ```bash
@@ -118,19 +111,16 @@ nix-env --switch-profile /nix/var/nix/profiles/per-user/fesplugas/foo
 nix-env --query
 # Install a new package
 nix-env -iA nixpkgs.hello
-```
-
-Go back to your default profile
-
-```bash
+# Go back to your default profile
 nix-env --switch-profile /nix/var/nix/profiles/per-user/$USER/profile
 ```
 
-[darwin]: https://en.wikipedia.org/wiki/Darwin_(operating_system)
-[nix]: https://nixos.org
-[nix-shell]: https://nixos.org/manual/nix/stable/command-ref/nix-shell.html
-[nix-direnv]: https://github.com/nix-community/nix-direnv
-[nix-direnv-non-standard]: https://github.com/nix-community/nix-direnv#using-a-non-standard-file-name
+If you need to fix the profiles because you get `*.lock` errors
+
+```
+sudo mkdir /nix/var/nix/profiles/per-user/fesplugas                       
+sudo chown -R $USER:nixbld /nix/var/nix/profiles/per-user/fesplugas
+```
 
 ## Gotchas
 
@@ -146,3 +136,9 @@ sudo launchctl unload /Library/LaunchDaemons/org.nixos.darwin-store.plist
 sudo launchctl load /Library/LaunchDaemons/org.nixos.nix-daemon.plist
 sudo launchctl load /Library/LaunchDaemons/org.nixos.darwin-store.plist
 ```
+
+[darwin]: https://en.wikipedia.org/wiki/Darwin_(operating_system)
+[nix]: https://nixos.org
+[nix-shell]: https://nixos.org/manual/nix/stable/command-ref/nix-shell.html
+[nix-direnv]: https://github.com/nix-community/nix-direnv
+[nix-direnv-non-standard]: https://github.com/nix-community/nix-direnv#using-a-non-standard-file-name
