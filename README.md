@@ -34,7 +34,7 @@ You can search for new packages using the CLI tools or on https://search.nixos.o
 
 ### Without nix-darwin ...
 
-Although this is not the recommended way to install packages I have used it in the past to make Nix work as Homebrew. Things will work properly until you have to compile packages, because not all libraries are linked in `~/.nix-profile/lib`.
+Although this is not the recommended way to install packages I used it in the past to make Nix work as Homebrew. Things will work properly until you have to compile packages, because not all libraries are linked in `~/.nix-profile/lib`.
 
 ```bash
 nix-env --install --remove-all --file env.nix
