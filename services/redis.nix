@@ -17,5 +17,7 @@ mkShell {
     cat << EOF > Procfile
     redis: redis-server data/redis/redis.conf
     EOF
+
+    echo "nix: You can start processes with 'hivemind'"
   '';
 }
