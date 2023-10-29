@@ -1,0 +1,4 @@
+#! /usr/bin/env nix-shell
+#! nix-shell -i bash --packages ruby_3_2 openssl
+
+gem install hiredis-client -v 0.14.1

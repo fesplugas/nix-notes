@@ -4,12 +4,12 @@ let
 in
   pkgs.mkShell {
     packages = with pkgs; [
-      cmake
+      # cmake
       libyaml
       nodejs_18
       openssl
-      pkg-config
-      postgresql
+      # pkg-config
+      postgresql_15
       ruby_3_2
       yarn
     ];
@@ -17,10 +17,9 @@ in
     BUNDLE_CACHE_ALL="true";
 
     shellHook = ''
-      # export GEM_HOME=$HOME/.local/share/gem/ruby/3.2.0
-      # export GEM_PATH=$GEM_HOME
-      # export PATH=$GEM_HOME/bin:$PATH
-      # export PATH="$HOME/.local/share/rtx/shims:$PATH"
+      export PATH=$(gem env home)/bin:$PATH
       export PATH="./bin:$PATH"
+
+      gem list --installed rails > /dev/null || gem install rails
     '';
   }
