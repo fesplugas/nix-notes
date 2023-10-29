@@ -12,7 +12,7 @@ I wanted to something different to manage my development environment but with a 
 
 Here are my notes about how I use it.
 
-## Install Nix and Some Global Packages
+## Install Nix
 
 Install **Nix** by using the [Official Installer](https://nixos.org/manual/nix/stable/installation/installing-binary.html#multi-user-installation) or [Determinate Nix Installer](https://github.com/DeterminateSystems/nix-installer#readme)
 
