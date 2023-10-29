@@ -28,6 +28,7 @@ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix 
 Verify
 
 ```bash
+. /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 nix-shell -p hello --run "hello"
 ```
 
