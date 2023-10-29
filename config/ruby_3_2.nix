@@ -5,8 +5,10 @@ in
   pkgs.mkShell {
     packages = with pkgs; [
       libyaml
+      foreman
       gh
       git
+      hivemind
       nodejs_18
       openssl
       postgresql_15
