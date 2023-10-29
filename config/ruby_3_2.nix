@@ -18,8 +18,5 @@ in
 
     shellHook = ''
       export PATH=$(gem env home)/bin:$PATH
-      export PATH="./bin:$PATH"
-
-      gem list --installed rails > /dev/null || gem install rails
     '';
   }
