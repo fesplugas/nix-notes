@@ -6,6 +6,8 @@ in
     packages = with pkgs; [
       # cmake
       libyaml
+      gh
+      git
       nodejs_18
       openssl
       # pkg-config
@@ -15,6 +17,8 @@ in
     ];
 
     BUNDLE_CACHE_ALL="true";
+    # If you are on Linux you might need to set this
+    # PGHOST="/tmp";
 
     shellHook = ''
       export PATH=$(gem env home)/bin:$PATH
