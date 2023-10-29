@@ -7,6 +7,6 @@ in
       pkgs.hello
     ];
     shellHook = ''
-      echo "You are using a nix-shell!"
+      echo "You are using a nix-shell (enabled with direnv)"
     '';
   }
