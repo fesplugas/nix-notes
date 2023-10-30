@@ -33,6 +33,10 @@ Verify
 nix-shell -p hello --run "hello"
 ```
 
+## How do I install packages?
+
+### With nix-env
+
 Install some packages
 
 ```bash
@@ -47,23 +51,21 @@ List installed packages
 nix-env --query # You can also use -q short version
 ```
 
-You can search for new packages using the CLI tools or on https://search.nixos.org/packages
-
-## How do I install packages?
-
-### Without nix-darwin ...
-
-Although this is not the recommended way to install packages I used it in the past to make Nix work as Homebrew. Things will work properly until you have to compile packages, because not all libraries are linked in `~/.nix-profile/lib`.
+You can also pass a file the `nix-env`
 
 ```bash
 nix-env --install --remove-all --file env.nix
 ```
 
+You can search for new packages using the CLI tools or on https://search.nixos.org/packages
+
+**Note:** Although this is not the recommended way to install packages I used it in the past to make Nix work as Homebrew. Things will work properly until you have to compile packages, because not all libraries are linked in `~/.nix-profile/lib`.
+
 ### With nix-darwin
 
 WIP.
 
-### Custom Packages on a Project?
+### With nix-shell (Custom Packages on a Project)
 
 I use a combination of [nix-shell][nix-shell] and [nix-direnv][nix-direnv] to install custom packages and/or to pin versions.
 
