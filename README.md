@@ -136,7 +136,9 @@ nix-shell services/redis.nix
 
 Once [nix-shell][nix-shell] is enabled, run `hivemind` to start the services.
 
-## Custom Profiles
+## Notes
+
+### Custom Profiles
 
 Create a new profile
 
@@ -156,8 +158,6 @@ If you need to fix the profiles because you get `*.lock` errors
 sudo mkdir /nix/var/nix/profiles/per-user/fesplugas                       
 sudo chown -R $USER:nixbld /nix/var/nix/profiles/per-user/fesplugas
 ```
-
-## Notes
 
 ### Uninstall Nix?
 
