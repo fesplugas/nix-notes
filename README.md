@@ -38,16 +38,13 @@ Install some packages
 ```bash
 nix-channel --add https://nixos.org/channels/nixpkgs-unstable
 nix-channel --update
-nix-env --install --attr nixpkgs.gh
-nix-env -iA nixpkgs.gh
+nix-env --install --attr nixpkgs.gh # You can also use -iA short version
 ```
 
 List installed packages
 
 ```bash
-nix-env --query
-# You can also use the short version
-nix-env -q
+nix-env --query # You can also use -q short version
 ```
 
 You can search for new packages using the CLI tools or on https://search.nixos.org/packages
