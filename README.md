@@ -19,7 +19,7 @@ Install **Nix** by using the [Official Installer](https://nixos.org/manual/nix/s
 ```bash
 curl -L https://nixos.org/nix/install | sh
 ```
-[Determinate Nix Installer](https://github.com/DeterminateSystems/nix-installer#readme)
+Or the fantastic [Determinate Nix Installer](https://github.com/DeterminateSystems/nix-installer#readme)
 
 ```bash
 export NIX_INSTALLER_NO_CONFIRM=true
