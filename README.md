@@ -76,7 +76,6 @@ First of all install `direnv` and `nix-direnv`
 nix-channel --add https://nixos.org/channels/nixpkgs-unstable # Not needed if you have done it before
 nix-channel --update
 nix-env --install --attr nixpkgs.direnv
-nix-env --install --attr nixpkgs.nix-direnv # You can also use -iA short version
 ```
 
 Enable `direnv` on your `~/.zshrc` configuration
@@ -101,10 +100,8 @@ mkShell {
 
 Create an `.envrc` file
 
-```bash
-use nix
-# You can also use a non-standard file name
-# use nix shell.nix
+```
+use nix # You can also pass filename as `use nix example.nix`
 ```
 
 Allow the new `.envrc` file
