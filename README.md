@@ -68,7 +68,10 @@ WIP.
 
 ### With nix-shell (Custom Packages on a Project)
 
-I use a combination of [nix-shell][nix-shell] and [nix-direnv][nix-direnv] to install custom packages and/or to pin versions.
+> [!NOTE]  
+> You can also use [devenv.sh](https://devenv.sh/) to achieve a similar setup.
+
+I use a combination of [nix-shell][nix-shell] and [direnv][direnv] to install custom packages and/or to pin versions.
 
 First of all install `direnv` and `nix-direnv`
 
