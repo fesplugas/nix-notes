@@ -70,12 +70,13 @@ WIP.
 
 I use a combination of [nix-shell][nix-shell] and [nix-direnv][nix-direnv] to install custom packages and/or to pin versions.
 
-First of all install `direnv`
+First of all install `direnv` and `nix-direnv`
 
 ```
 nix-channel --add https://nixos.org/channels/nixpkgs-unstable # Not needed if you have done it before
 nix-channel --update
-nix-env --install --attr nixpkgs.direnv # You can also use -iA short version
+nix-env --install --attr nixpkgs.direnv
+nix-env --install --attr nixpkgs.nix-direnv # You can also use -iA short version
 ```
 
 Enable `direnv` on your `~/.zshrc` configuration
