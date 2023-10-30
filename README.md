@@ -125,7 +125,7 @@ which hello
 To run services I'm using a combination of
 
 - `shell.nix` to define the packages and pin versions
-- [nix-direnv][nix-direnv] to start a `nix-shell`
+- [direnv][direnv] to start a `nix-shell`
 - [hivemind](https://github.com/DarthSim/hivemind#usage) to start the processes
 
 As an example `services/redis.nix` installs **Hivemind** and **Redis** and creates a `Procfile` which is used by **Hivemind** to start the processes.
@@ -177,6 +177,7 @@ sudo launchctl load /Library/LaunchDaemons/org.nixos.darwin-store.plist
 ```
 
 [darwin]: https://en.wikipedia.org/wiki/Darwin_(operating_system)
+[direnv]: https://direnv.net/
 [nix]: https://nixos.org
 [nix-shell]: https://nixos.org/manual/nix/stable/command-ref/nix-shell.html
 [nix-direnv]: https://github.com/nix-community/nix-direnv
