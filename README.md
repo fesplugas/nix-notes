@@ -34,8 +34,6 @@ nix-shell -p hello --run "hello"
 
 You can search for new packages using the CLI tools or on https://search.nixos.org/packages
 
-[Want to uninstall?](https://github.com/NixOS/nix/blob/master/doc/manual/src/installation/uninstall.md#macos)
-
 ## How do I install packages?
 
 ### Without nix-darwin ...
@@ -135,7 +133,11 @@ sudo mkdir /nix/var/nix/profiles/per-user/fesplugas
 sudo chown -R $USER:nixbld /nix/var/nix/profiles/per-user/fesplugas
 ```
 
-## Gotchas
+## Notes
+
+### Uninstall Nix?
+
+[Want to uninstall?](https://github.com/NixOS/nix/blob/master/doc/manual/src/installation/uninstall.md#macos)
 
 ### Having problems with the SSL certificate?
 
