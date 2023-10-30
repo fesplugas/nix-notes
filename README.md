@@ -22,7 +22,6 @@ curl -L https://nixos.org/nix/install | sh
 [Determinate Nix Installer](https://github.com/DeterminateSystems/nix-installer#readme)
 
 ```bash
-# Determinate Nix Installer
 export NIX_INSTALLER_NO_CONFIRM=true
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 ```
