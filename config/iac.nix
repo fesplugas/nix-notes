@@ -12,4 +12,8 @@ in
       terraform-docs
       terragrunt
     ];
+
+    shellHook = ''
+      export PATH=$(gem env home)/bin:$PATH
+    '';
   }
