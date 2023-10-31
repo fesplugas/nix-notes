@@ -103,6 +103,14 @@ mkShell {
 Create an `.envrc` file
 
 ```
+# nix-direnv
+# https://github.com/nix-community/nix-direnv?tab=readme-ov-file#nix-direnv
+# Not needed but will cache `nix-shell` environment.
+# https://github.com/nix-community/nix-direnv?tab=readme-ov-file#installation
+if ! has nix_direnv_version || ! nix_direnv_version 2.4.0; then
+  source_url "https://raw.githubusercontent.com/nix-community/nix-direnv/2.4.0/direnvrc" "sha256-XQzUAvL6pysIJnRJyR7uVpmUSZfc7LSgWQwq/4mBr1U="
+fi
+
 use nix # You can also pass filename as `use nix example.nix`
 ```
 
