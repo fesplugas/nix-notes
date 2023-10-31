@@ -72,7 +72,7 @@ WIP.
 
 I use a combination of [nix-shell][nix-shell] and [direnv][direnv] to install custom packages and/or to pin versions.
 
-First of all install `direnv` and `nix-direnv`
+First of all install `direnv`
 
 ```
 nix-channel --add https://nixos.org/channels/nixpkgs-unstable # Not needed if you have done it before
@@ -120,7 +120,7 @@ Allow the new `.envrc` file
 direnv allow
 ```
 
-Verify new packages have been installed
+And now an smoke test ...
 
 ```bash
 which hello
