@@ -148,6 +148,14 @@ Once [nix-shell][nix-shell] is enabled, run `hivemind` to start the services.
 
 ## Notes
 
+### nix-shell commands
+
+Let's say you have a Rails application with a `shell.nix` file which defines some of its dependencies. You can run `nix-shell` to start a new shell with all the dependencies installed or you can run a `nix-shell` command to execute a command inside the new shell.
+
+```bash
+nix-shell --run "bin/rails server"
+```
+
 ### Custom Profiles
 
 Create a new profile
