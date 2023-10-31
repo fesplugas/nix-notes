@@ -4,13 +4,16 @@ let
 in
   pkgs.mkShell {
     packages = with pkgs; [
-      libyaml
+      cmake
       foreman
       gh
       git
       hivemind
+      lefthook
+      libyaml
       nodejs_18
       openssl
+      pkg-config
       postgresql_15
       ruby_3_2
       yarn
