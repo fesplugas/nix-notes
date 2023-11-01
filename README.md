@@ -14,7 +14,7 @@ Here are my notes about how I use it.
 
 ## Install Nix
 
-Install **Nix** by using the [Official Installer](https://nixos.org/manual/nix/stable/installation/installing-binary.html#multi-user-installation)
+Install **Nix** using the [Official Installer](https://nixos.org/manual/nix/stable/installation/installing-binary.html#multi-user-installation)
 
 ```bash
 curl -L https://nixos.org/nix/install | sh
