@@ -41,6 +41,10 @@ nix-shell -p hello --run "hello"
 
 ### With nix-env
 
+> The command nix-env is used to manipulate Nix user environments. User environments are sets of software packages available to a user at some point in time. In other words, they are a synthesised view of the programs available in the Nix store. There may be many user environments: different users can have different environments, and individual users can switch between different environments.
+
+I recommend starting with [nix-env](https://nixos.org/manual/nix/stable/command-ref/nix-env) as it will show you how powerful nix can be.
+
 Install some packages
 
 ```bash
@@ -55,10 +59,7 @@ List installed packages
 nix-env --query # You can also use -q short version
 ```
 
-> [!NOTE]  
-> Although this is not the recommended way to install packages I used it in the past to make Nix work as Homebrew. Things will work properly until you have to compile packages, because not all libraries are linked in `~/.nix-profile/lib`.
-
-You can also pass a file the `nix-env`
+You can also pass a file to `nix-env`. This is the simplest way you can install multiple packages in your environment for reproducibility. In this repository you'll find a [nix.env](nix.env) file with a list of the packages I currently use. If you run the following command you'll have the exact same tools I've installed on my development machine.
 
 ```bash
 nix-env --install --remove-all --file env.nix
@@ -66,16 +67,20 @@ nix-env --install --remove-all --file env.nix
 
 You can search for new packages using the CLI tools or on https://search.nixos.org/packages
 
-### With nix-darwin
+> [!NOTE]  
+> Although this is not the recommended way to install packages I used it in the past to make Nix work as Homebrew. Things will work properly until you have to compile packages, because not all libraries are linked in `~/.nix-profile/lib`.
 
-WIP.
+There are other ways to install packages in your system:
+
+- [nix-darwin]([https://github.com/LnL7/nix-darwin](https://github.com/LnL7/nix-darwin?tab=readme-ov-file#nix-darwin)): "This project aims to bring the convenience of a declarative system approach to macOS". This is what I'm currently using. Not all NixOS options will work, but it's good enough to install packages and manage some configuration files.
+- [home-manager](https://github.com/nix-community/home-manager): It has been very frustating to use as it's very unstable and things will suddenly break.
 
 ### With nix-shell (Custom Packages on a Project)
 
 > [!NOTE]  
 > You can also use [devenv.sh](https://devenv.sh/) to achieve a similar setup.
 
-I use a combination of [nix-shell][nix-shell] and [direnv][direnv] to install custom packages and/or to pin versions.
+I use a combination of [nix-shell][nix-shell] and [direnv][direnv] to install packages required on a particular project.
 
 First of all install `direnv`
 
@@ -131,11 +136,12 @@ And now an smoke test ...
 which hello
 ```
 
+That's it, you have `hello` command available on that project. Now you can install `terraform`, `ruby` ... or whatever tool you need which is specific to that project.
+
 ## How do I run services?
 
 > [!NOTE]  
 > You can also use [devenv.sh](https://devenv.sh/) to achieve a similar setup.
-> I'm not using [nix-darwin](https://github.com/LnL7/nix-darwin) as it requires some hacks to make **PostgreSQL** and **Redis** versions work.
 
 To run services I'm using a combination of
 
