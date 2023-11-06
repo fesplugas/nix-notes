@@ -25,5 +25,6 @@ in
 
     shellHook = ''
       export PATH=$(gem env home)/bin:$PATH
+      export PATH=./bin:$PATH
     '';
   }
