@@ -190,7 +190,7 @@ sudo chown -R $USER:nixbld /nix/var/nix/profiles/per-user/fesplugas
 
 ### Uninstall Nix?
 
-[Want to uninstall?](https://github.com/NixOS/nix/blob/master/doc/manual/src/installation/uninstall.md#macos)
+[Want to uninstall?](https://github.com/DeterminateSystems/nix-installer?tab=readme-ov-file#uninstalling)
 
 [darwin]: https://en.wikipedia.org/wiki/Darwin_(operating_system)
 [direnv]: https://direnv.net/
