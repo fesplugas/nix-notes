@@ -19,7 +19,6 @@ in
       yarn
     ];
 
-    BUNDLE_CACHE_ALL="true";
     # If you are on Linux you might need to set this
     # PGHOST="/tmp";
 
