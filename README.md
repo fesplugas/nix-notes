@@ -67,7 +67,7 @@ nix-env --install --remove-all --file env.nix
 
 You can search for new packages using the CLI tools or on https://search.nixos.org/packages
 
-> [!NOTE]  
+> [!NOTE]
 > Although this is not the recommended way to install packages I used it in the past to make Nix work as Homebrew. Things will work properly until you have to compile packages, because not all libraries are linked in `~/.nix-profile/lib`.
 
 There are other ways to install packages in your system:
@@ -184,7 +184,7 @@ nix-env --switch-profile /nix/var/nix/profiles/per-user/$USER/profile
 If you need to fix the profiles because you get `*.lock` errors
 
 ```
-sudo mkdir /nix/var/nix/profiles/per-user/fesplugas                       
+sudo mkdir /nix/var/nix/profiles/per-user/fesplugas
 sudo chown -R $USER:nixbld /nix/var/nix/profiles/per-user/fesplugas
 ```
 
