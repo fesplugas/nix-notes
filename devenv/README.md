@@ -1,3 +1,0 @@
-# Nix Notes - Devenv
-
-WIP
