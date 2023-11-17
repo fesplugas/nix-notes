@@ -38,7 +38,7 @@ nix-shell -p hello --run "hello"
 
 ## How do I install packages?
 
-### With nix-shell (Custom Packages on a Project)
+### With nix-shell
 
 I use a combination of [nix-shell][nix-shell] and [direnv][direnv] to install packages required on a particular project.
 
