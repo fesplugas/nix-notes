@@ -30,10 +30,9 @@ Or the fantastic [Determinate Nix Installer](https://github.com/DeterminateSyste
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --no-confirm
 ```
 
-Verify
+Open a new terminal and run the following command to see things are working as expected
 
 ```bash
-. /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 nix-shell -p hello --run "hello"
 ```
 
