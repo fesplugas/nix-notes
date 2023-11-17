@@ -143,13 +143,10 @@ nix-env -iA nixpkgs.myPackages
 
 ### Nix Darwin and Home Manager?
 
-- [nix-darwin]([https://github.com/LnL7/nix-darwin](https://github.com/LnL7/nix-darwin?tab=readme-ov-file#nix-darwin)): "This project aims to bring the convenience of a declarative system approach to macOS". This is what I'm currently using. Not all NixOS options will work, but it's good enough to install packages and manage some configuration files.
+- [nix-darwin](https://github.com/LnL7/nix-darwin?tab=readme-ov-file#nix-darwin): "This project aims to bring the convenience of a declarative system approach to macOS". This is what I'm currently using. Not all NixOS options will work, but it's good enough to install packages and manage some configuration files.
 - [home-manager](https://github.com/nix-community/home-manager): It has been very frustating to use as it's very unstable and things will suddenly break.
 
 ## How do I run services?
-
-> [!NOTE]  
-> You can also use [devenv.sh](https://devenv.sh/) to achieve a similar setup.
 
 To run services I'm using a combination of
 
