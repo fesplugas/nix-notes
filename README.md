@@ -40,9 +40,6 @@ nix-shell -p hello --run "hello"
 
 ### With nix-shell (Custom Packages on a Project)
 
-> [!NOTE]  
-> You can also use [devenv.sh](https://devenv.sh/) to achieve a similar setup.
-
 I use a combination of [nix-shell][nix-shell] and [direnv][direnv] to install packages required on a particular project.
 
 First of all install `direnv`
