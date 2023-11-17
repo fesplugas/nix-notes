@@ -183,7 +183,7 @@ nix-env --query
 # Install a new package
 nix-env -iA nixpkgs.hello
 # Go back to your default profile
-nix-env --switch-profile /nix/var/nix/profiles/per-user/$USER/profile
+nix-env --switch-profile $HOME/.local/state/nix/profiles/profile
 ```
 
 If you need to fix the profiles because you get `*.lock` errors
