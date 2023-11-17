@@ -186,13 +186,6 @@ nix-env -iA nixpkgs.hello
 nix-env --switch-profile $HOME/.local/state/nix/profiles/profile
 ```
 
-If you need to fix the profiles because you get `*.lock` errors
-
-```
-sudo mkdir /nix/var/nix/profiles/per-user/fesplugas
-sudo chown -R $USER:nixbld /nix/var/nix/profiles/per-user/fesplugas
-```
-
 ### Uninstall Nix?
 
 [Want to uninstall?](https://github.com/DeterminateSystems/nix-installer?tab=readme-ov-file#uninstalling)
