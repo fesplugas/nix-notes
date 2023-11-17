@@ -39,42 +39,6 @@ nix-shell -p hello --run "hello"
 
 ## How do I install packages?
 
-### With nix-env
-
-> The command nix-env is used to manipulate Nix user environments. User environments are sets of software packages available to a user at some point in time. In other words, they are a synthesised view of the programs available in the Nix store. There may be many user environments: different users can have different environments, and individual users can switch between different environments.
-
-I recommend starting with [nix-env](https://nixos.org/manual/nix/stable/command-ref/nix-env) as it will show you how powerful nix can be.
-
-Install some packages
-
-```bash
-nix-channel --add https://nixos.org/channels/nixpkgs-unstable
-nix-channel --update
-nix-env --install --attr nixpkgs.gh # You can also use -iA short version
-```
-
-List installed packages
-
-```bash
-nix-env --query # You can also use -q short version
-```
-
-You can also pass a file to `nix-env`. This is the simplest way you can install multiple packages in your environment for reproducibility. In this repository you'll find a [nix.env](nix.env) file with a list of the packages I currently use. If you run the following command you'll have the exact same tools I've installed on my development machine.
-
-```bash
-nix-env --install --remove-all --file env.nix
-```
-
-You can search for new packages using the CLI tools or on https://search.nixos.org/packages
-
-> [!NOTE]
-> Although this is not the recommended way to install packages I used it in the past to make Nix work as Homebrew. Things will work properly until you have to compile packages, because not all libraries are linked in `~/.nix-profile/lib`.
-
-There are other ways to install packages in your system:
-
-- [nix-darwin]([https://github.com/LnL7/nix-darwin](https://github.com/LnL7/nix-darwin?tab=readme-ov-file#nix-darwin)): "This project aims to bring the convenience of a declarative system approach to macOS". This is what I'm currently using. Not all NixOS options will work, but it's good enough to install packages and manage some configuration files.
-- [home-manager](https://github.com/nix-community/home-manager): It has been very frustating to use as it's very unstable and things will suddenly break.
-
 ### With nix-shell (Custom Packages on a Project)
 
 > [!NOTE]  
@@ -110,33 +74,81 @@ mkShell {
 }
 ```
 
-Create an `.envrc` file
-
-```
-# nix-direnv
-# https://github.com/nix-community/nix-direnv?tab=readme-ov-file#nix-direnv
-# Not needed but will cache `nix-shell` environment.
-# https://github.com/nix-community/nix-direnv?tab=readme-ov-file#installation
-if ! has nix_direnv_version || ! nix_direnv_version 2.4.0; then
-  source_url "https://raw.githubusercontent.com/nix-community/nix-direnv/2.4.0/direnvrc" "sha256-XQzUAvL6pysIJnRJyR7uVpmUSZfc7LSgWQwq/4mBr1U="
-fi
-
-use nix # You can also pass filename as `use nix example.nix`
-```
-
-Allow the new `.envrc` file
+Create an `.envrc` file and allow its execution
 
 ```bash
+echo "use nix" > .envrc
 direnv allow
 ```
 
-And now an smoke test ...
+Now you can run an smoke test to execute the installed command
 
 ```bash
-which hello
+hello
 ```
 
 That's it, you have `hello` command available on that project. Now you can install `terraform`, `ruby` ... or whatever tool you need which is specific to that project.
+
+### With nix-env
+
+> The command nix-env is used to manipulate Nix user environments. User environments are sets of software packages available to a user at some point in time. In other words, they are a synthesised view of the programs available in the Nix store. There may be many user environments: different users can have different environments, and individual users can switch between different environments.
+
+You can start by installing some packages.
+
+```bash
+nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+nix-channel --update
+nix-env --install --attr nixpkgs.gh # You can also use -iA short version
+```
+
+List installed packages
+
+```bash
+nix-env --query # You can also use -q short version
+```
+
+As you want to have a reproducible development environment I recommend to create a your package or to install all the packages using a nix file.
+
+#### Using a nix.env file
+
+This is the simplest way you can install multiple packages in your environment for reproducibility. In this repository you'll find a [nix.env](nix.env) file with a list of the packages I currently use. If you run the following command you'll have the exact same tools I've installed on my development machine.
+
+```bash
+nix-env --install --remove-all --file env.nix
+```
+
+You can search for new packages using the CLI tools or on https://search.nixos.org/packages
+
+#### Using packageOverrides
+
+Edit `$HOME/.config/nixpkgs/config.nix` and add ...
+
+```nix
+{
+  allowUnfree = false;
+
+  packageOverrides = pkgs: with pkgs; {
+    myPackages = pkgs.buildEnv {
+      name = "my-packages";
+
+      paths = [
+        hello
+      ];
+    };
+  };
+}
+```
+
+Now you can install your package using
+
+```bash
+nix-env -iA nixpkgs.myPackages
+```
+
+### Nix Darwin and Home Manager?
+
+- [nix-darwin]([https://github.com/LnL7/nix-darwin](https://github.com/LnL7/nix-darwin?tab=readme-ov-file#nix-darwin)): "This project aims to bring the convenience of a declarative system approach to macOS". This is what I'm currently using. Not all NixOS options will work, but it's good enough to install packages and manage some configuration files.
+- [home-manager](https://github.com/nix-community/home-manager): It has been very frustating to use as it's very unstable and things will suddenly break.
 
 ## How do I run services?
 
