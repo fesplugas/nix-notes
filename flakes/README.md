@@ -1,3 +1,0 @@
-# Nix Notes - Flakes
-
-Introduction to Flakes ...
