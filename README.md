@@ -15,12 +15,7 @@ Here are my notes about how I use it.
 
 ## Install Nix
 
-Install **Nix** using the [Official Installer](https://nixos.org/manual/nix/stable/installation/installing-binary.html#multi-user-installation)
-
-```bash
-curl -L https://nixos.org/nix/install | sh
-```
-Or the fantastic [Determinate Nix Installer](https://github.com/DeterminateSystems/nix-installer#readme)
+Install **Nix** using [Determinate Nix Installer](https://github.com/DeterminateSystems/nix-installer#readme) which has some good defaults
 
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --no-confirm
