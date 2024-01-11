@@ -45,7 +45,7 @@ I use a combination of [nix-shell][nix-shell] and [direnv][direnv] to install pa
 First of all install `direnv`
 
 ```
-nix-channel --add https://nixos.org/channels/nixpkgs-unstable # Not needed if you have done it before
+nix-channel --add https://nixos.org/channels/nixpkgs-unstable
 nix-channel --update
 nix-env --install --attr nixpkgs.direnv
 ```
