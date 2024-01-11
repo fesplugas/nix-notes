@@ -2,16 +2,12 @@
 
 Since I started using **[Darwin][darwin]** based machines in 2003 I've used **Fink**, **MacPorts**, **Stow** and **Homebrew**.
 
-For the last few years my go-to developer tools have been
-
-- [Homebrew](https://brew.sh)
-- [ASDF](https://github.com/asdf-vm/asdf) and [Multiple Plugins](https://github.com/asdf-vm/asdf-plugins#plugin-list)
-- [Docker](https://docs.docker.com/) and [Docker Compose](https://docs.docker.com/compose/)
+For the last few years my go-to developer tools have been [Homebrew](https://brew.sh), [ASDF](https://github.com/asdf-vm/asdf) and [Docker](https://docs.docker.com/).
 
 I wanted to something different to manage my development environment but with a couple of constraints:
 
 - No need to compile packages
-- Tool needs to be fast and reproducible
+- Fast and reproducible
 
 **[Nix][nix]** had been under my radar for some time but as it had, and still has, an "incredibly steep learning curve" I was postponing the adoption.
 
