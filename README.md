@@ -142,66 +142,6 @@ hello
 
 That's it, you have `hello` command available on that project. Now you can install `terraform`, `ruby` ... or whatever tool you need which is specific to that project.
 
-### nix-env (deprecated)
-
-> The command nix-env is used to manipulate Nix user environments. User environments are sets of software packages available to a user at some point in time. In other words, they are a synthesised view of the programs available in the Nix store. There may be many user environments: different users can have different environments, and individual users can switch between different environments.
-
-You can start by installing some packages.
-
-```bash
-nix-channel --add https://nixos.org/channels/nixpkgs-unstable
-nix-channel --update
-nix-env --install --attr nixpkgs.gh # You can also use -iA short version
-```
-
-List installed packages
-
-```bash
-nix-env --query # You can also use -q short version
-```
-
-As you want to have a reproducible development environment I recommend to create a your package or to install all the packages using a nix file.
-
-#### Using a nix.env file
-
-This is the simplest way you can install multiple packages in your environment for reproducibility. In this repository you'll find a [nix.env](nix.env) file with a list of the packages I currently use. If you run the following command you'll have the exact same tools I've installed on my development machine.
-
-```bash
-nix-env --install --remove-all --file env.nix
-```
-
-You can search for new packages using the CLI tools or on https://search.nixos.org/packages
-
-#### Using packageOverrides
-
-Edit `$HOME/.config/nixpkgs/config.nix` and add ...
-
-```nix
-{
-  allowUnfree = false;
-
-  packageOverrides = pkgs: with pkgs; {
-    myPackages = pkgs.buildEnv {
-      name = "my-packages";
-
-      paths = [
-        hello
-      ];
-    };
-  };
-}
-```
-
-Now you can install your package using
-
-```bash
-nix-env -iA nixpkgs.myPackages
-```
-
-### nix-darwin (deprecated)
-
-[nix-darwin](https://github.com/LnL7/nix-darwin?tab=readme-ov-file#nix-darwin): "This project aims to bring the convenience of a declarative system approach to macOS". Not all NixOS options will work, but it's good enough to install packages and manage some configuration files.
-
 ## How do I run services?
 
 To run services I'm using a combination of
