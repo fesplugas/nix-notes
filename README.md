@@ -36,9 +36,73 @@ Open a new terminal and run the following command to see things are working as e
 nix-shell -p hello --run "hello"
 ```
 
-## How do I install packages?
+## Setting Up a Development Environment
 
-### With nix-shell
+### Home Manager with Nix Flakes
+
+I use home-manager to install packages that I need on my day to day work which are not project specific. I recommend installing it with [Nix Flakes](https://nix-community.github.io/home-manager/index.xhtml#ch-nix-flakes).
+
+### Flakes
+
+I've been migrating my `shell.nix` to `flake.nix` because it simplifies a lot version pinning. You can read more about **Flakes** [here](https://nixos.wiki/wiki/Flakes).
+
+As an example this is the `flake.nix` I use on my Rails projects:
+
+```nix
+{
+  description = "ruby 3.3 environment";
+
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+  };
+
+  outputs = { self, nixpkgs }:
+    let
+      inherit (nixpkgs.lib) genAttrs;
+      supportedSystems = [ "aarch64-linux" "aarch64-darwin" ];
+      forAllSystems = f: genAttrs supportedSystems (system: f system);
+    in
+    {
+      devShells = forAllSystems (system:
+        let pkgs = import nixpkgs { inherit system; };
+        in {
+          default = pkgs.mkShell {
+            packages = with pkgs; [
+              cmake
+              gh
+              git
+              git-crypt
+              gitleaks
+              gnupg
+              lefthook
+              libyaml
+              nodejs_20
+              openssl
+              overmind
+              pkg-config
+              postgresql_15
+              ruby_3_3
+              yarn
+            ];
+
+            shellHook = ''
+              export PATH=./bin:$PATH
+            '';
+          };
+        });
+    };
+}
+```
+
+To enable the flake you can run
+
+```console
+nix develop
+```
+
+Or you can use [nix-direnv](https://github.com/nix-community/nix-direnv?tab=readme-ov-file#flakes-support) to enable the console when you enter the folder.
+
+### nix-shell (deprecated)
 
 I use a combination of [nix-shell][nix-shell] and [direnv][direnv] to install packages required on a particular project.
 
@@ -85,7 +149,7 @@ hello
 
 That's it, you have `hello` command available on that project. Now you can install `terraform`, `ruby` ... or whatever tool you need which is specific to that project.
 
-### With nix-env
+### nix-env (deprecated)
 
 > The command nix-env is used to manipulate Nix user environments. User environments are sets of software packages available to a user at some point in time. In other words, they are a synthesised view of the programs available in the Nix store. There may be many user environments: different users can have different environments, and individual users can switch between different environments.
 
@@ -141,10 +205,9 @@ Now you can install your package using
 nix-env -iA nixpkgs.myPackages
 ```
 
-### Nix Darwin and Home Manager?
+### nix-darwin
 
-- [nix-darwin](https://github.com/LnL7/nix-darwin?tab=readme-ov-file#nix-darwin): "This project aims to bring the convenience of a declarative system approach to macOS". This is what I'm currently using. Not all NixOS options will work, but it's good enough to install packages and manage some configuration files.
-- [home-manager](https://github.com/nix-community/home-manager): It has been very frustating to use as it's very unstable and things will suddenly break.
+[nix-darwin](https://github.com/LnL7/nix-darwin?tab=readme-ov-file#nix-darwin): "This project aims to bring the convenience of a declarative system approach to macOS". No longer using it. Not all NixOS options will work, but it's good enough to install packages and manage some configuration files.
 
 ## How do I run services?
 
