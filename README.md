@@ -243,9 +243,8 @@ nix develop --command bash -c "bin/rails server"
 
 ### Custom Profiles
 
-Create a new profile
-
-```bash
+```console
+# Create a new profile
 nix-env --switch-profile /nix/var/nix/profiles/per-user/fesplugas/foo
 # List installed packages
 nix-env --query
