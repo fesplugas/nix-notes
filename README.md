@@ -205,9 +205,9 @@ Now you can install your package using
 nix-env -iA nixpkgs.myPackages
 ```
 
-### nix-darwin
+### nix-darwin (deprecated)
 
-[nix-darwin](https://github.com/LnL7/nix-darwin?tab=readme-ov-file#nix-darwin): "This project aims to bring the convenience of a declarative system approach to macOS". No longer using it. Not all NixOS options will work, but it's good enough to install packages and manage some configuration files.
+[nix-darwin](https://github.com/LnL7/nix-darwin?tab=readme-ov-file#nix-darwin): "This project aims to bring the convenience of a declarative system approach to macOS". Not all NixOS options will work, but it's good enough to install packages and manage some configuration files.
 
 ## How do I run services?
 
