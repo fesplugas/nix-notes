@@ -168,6 +168,24 @@ Let's say you have a Rails application with a `shell.nix` file which defines som
 nix-shell --run "bin/rails server"
 ```
 
+### nix-shell
+
+```
+#!/usr/bin/env nix-shell
+#!nix-shell -i bash -p restic
+
+if [ ! -n "$RESTIC_REPOSITORY" ]; then
+  echo "error: \$RESTIC_REPOSITORY not set."
+  exit 1
+fi
+
+WORK_DIR=$(mktemp -d -t restic-restore-XXXXXX)
+
+restic restore latest \
+  --target $WORK_DIR \
+  --include $HOME/Documents
+```
+
 ### nix develop
 
 ```console
