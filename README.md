@@ -31,7 +31,7 @@ nix-shell -p hello --run "hello"
 
 ### Home Manager with Nix Flakes
 
-I use [home-manager](https://nixos.wiki/wiki/Home_Manager) to install packages that I need on my day to day work which are not project specific. I recommend installing it with [Nix Flakes](https://nix-community.github.io/home-manager/index.xhtml#ch-nix-flakes).
+I use [home-manager](https://nixos.wiki/wiki/Home_Manager) to install packages that I need on my day to day work which are not project specific. I recommend installing it with [Nix Flakes](https://nix-community.github.io/home-manager/index.xhtml#sec-flakes-standalone).
 
 I don't use any advanced features like dotfiles management. I just use it to define and install packages.
 
