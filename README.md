@@ -205,6 +205,12 @@ nix-env -iA nixpkgs.hello
 nix-env --switch-profile $HOME/.local/state/nix/profiles/profile
 ```
 
+### Need to upgrade nix?
+
+```console
+sudo -i nix upgrade-nix
+```
+
 ### Uninstall Nix?
 
 [Want to uninstall?](https://github.com/DeterminateSystems/nix-installer?tab=readme-ov-file#uninstalling)
