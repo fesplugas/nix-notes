@@ -21,6 +21,12 @@ Install **Nix** using [Determinate Nix Installer](https://github.com/Determinate
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --no-confirm
 ```
 
+Or use the default installer
+
+```bash
+curl -sL https://nixos.org/nix/install | sh
+```
+
 Open a new terminal and run the following command to see things are working as expected
 
 ```bash
