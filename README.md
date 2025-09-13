@@ -35,11 +35,16 @@ nix-shell -p hello --run "hello"
 
 ## Setting Up a Development Environment
 
-### Home Manager with Nix Flakes
+I use profiles. All you need is a `flake.nix` with a list of packages you want to install in the current profile. To install the profile:
 
-I use [home-manager](https://nixos.wiki/wiki/Home_Manager) to install packages that I need on my day to day work which are not project specific. I recommend installing it with [Nix Flakes](https://nix-community.github.io/home-manager/index.xhtml#sec-flakes-standalone).
+```bash
+nix profile install
+```
+If you add more packages to `flake.nix` you'll need to upgrade the profile:
 
-I don't use any advanced features like dotfiles management. I just use it to define and install packages.
+```bash
+nix profile upgrade <profile-name>
+```
 
 ### Flakes
 
