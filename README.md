@@ -43,8 +43,14 @@ nix profile install
 If you add more packages to `flake.nix` you'll need to upgrade the profile:
 
 ```bash
-nix profile upgrade <profile-name>
+nix profile upgrade nix-notes
 ```
+
+When you want to remove the profile:
+
+```bash
+nix profile remove nix-notes
+````
 
 ### Flakes
 
@@ -54,7 +60,7 @@ As an example this is the `flake.nix` I use on my Rails projects:
 
 ```nix
 {
-  description = "ruby 3.3 environment";
+  description = "ruby 3.4 environment";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -75,17 +81,15 @@ As an example this is the `flake.nix` I use on my Rails projects:
               cmake
               gh
               git
-              git-crypt
               gitleaks
-              gnupg
               lefthook
               libyaml
-              nodejs_20
+              nodejs_24
               openssl
               overmind
               pkg-config
-              postgresql_15
-              ruby_3_3
+              postgresql_18
+              ruby_3_4
               yarn
             ];
 
@@ -104,7 +108,7 @@ To enable the flake you can run
 nix develop
 ```
 
-Or you can use [nix-direnv](https://github.com/nix-community/nix-direnv?tab=readme-ov-file#flakes-support) to enable the console when you enter the folder.
+You can also use [nix-direnv](https://github.com/nix-community/nix-direnv?tab=readme-ov-file#flakes-support) to enable the console when you enter the project folder.
 
 ### nix-shell (deprecated)
 
